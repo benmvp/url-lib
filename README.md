@@ -1,5 +1,12 @@
 # url-lib
 
+[![version](https://img.shields.io/npm/v/url-lib.svg?style=flat-square)](http://npm.im/url-lib)
+[![Build Status](https://travis-ci.org/benmvp/url-lib.svg?branch=master)](https://travis-ci.org/benmvp/url-lib)
+[![Coverage Status](https://coveralls.io/repos/github/benmvp/url-lib/badge.svg?branch=master)](https://coveralls.io/github/benmvp/url-lib?branch=master)
+[![Dependencies status](https://img.shields.io/david/benmvp/url-lib.svg?style=flat-square)](https://david-dm.org/benmvp/url-lib#info=dependencies)
+[![Dev Dependencies status](https://img.shields.io/david/dev/benmvp/url-lib.svg?style=flat-square)](https://david-dm.org/benmvp/url-lib#info=devDependencies)
+[![downloads](https://img.shields.io/npm/dm/url-lib.svg?style=flat-square)](http://npm-stat.com/charts.html?package=url-lib&from=2016-03-26)
+
 A string utility for Node and browsers that supports serializing and parsing URLs and query strings.
 
 The primary use case is for building string URLs with query parameters for the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that is polyfilled in the browser via [`fetch`](https://github.com/github/fetch) and in Node via [`node-fetch`](https://github.com/bitinn/node-fetch) libraries. [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) combines the two.

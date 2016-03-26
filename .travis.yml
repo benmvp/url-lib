@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "node"
+  - "5"
+  - "5.1"
+  - "4"
+  - "4.2"
+  - "4.1"
+  - "4.0"
+  - "0.12"
+  - "0.10"
+  - "iojs"
+
+# Run the the eslint + test + coverage
+script: "npm run-script validate-ci"
+
+# Send coverage data to Coveralls
+after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

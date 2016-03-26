@@ -6,7 +6,10 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/*.js",
-    "validate": "npm run lint && npm run test"
+    "test-coverage": "istanbul cover _mocha -- -R spec tests/*.js",
+    "test-coverage-ci": "istanbul cover _mocha --report lcovonly -- -R spec tests/*.js",
+    "validate": "npm run lint && npm run test",
+    "validate-ci": "npm run lint && npm run test-coverage-ci"
   },
   "repository": {
     "type": "git",
@@ -28,8 +31,13 @@
   "homepage": "https://github.com/benmvp/url-lib#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
     "eslint": "^2.4.0",
+    "istanbul": "^0.4.2",
     "lodash": "^4.6.1",
     "mocha": "^2.4.5"
+  },
+  "engines": {
+    "node": ">=0.10"
   }
 }

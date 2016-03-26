@@ -1,0 +1,7 @@
+# /node_modules and /bower_components ignored by default
+
+# Ignore coverage files
+/coverage/
+
+# Ignore docs files
+/docs/
