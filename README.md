@@ -28,6 +28,10 @@ As a last resort, you can simply include `url-lib.js` on your web page via a `<s
 
 Coming soon...
 
+## API
+
+- [`getCacheDefeatStr`](docs/getCacheDefeatStr.md) - Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
+
 ## Polyfills needed to support older browsers
 
 None
