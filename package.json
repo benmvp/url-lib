@@ -1,0 +1,35 @@
+{
+  "name": "url-lib",
+  "version": "1.0.0",
+  "description": "A string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
+  "main": "./url-lib.js",
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "mocha tests/*.js",
+    "validate": "npm run lint && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benmvp/url-lib.git"
+  },
+  "keywords": [
+    "url",
+    "serialization",
+    "parse",
+    "query",
+    "querystring",
+    "resolve"
+  ],
+  "author": "Ben Ilegbodu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benmvp/url-lib/issues"
+  },
+  "homepage": "https://github.com/benmvp/url-lib#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.4.0",
+    "lodash": "^4.6.1",
+    "mocha": "^2.4.5"
+  }
+}
