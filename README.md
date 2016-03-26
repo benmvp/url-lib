@@ -19,7 +19,7 @@ Use with [Node](https://nodejs.org/en/), [webpack](https://webpack.github.io/) o
 ```js
 var urllib = require('url-lib');
 
-urllib.formatUrl('https://www.google.com', {q: 'benmvp'}); // => 'https://www.google.com?q=benmvp'
+urllib.formatUrl('http://www.benmvp.com', {q: 'benmvp'}); // => 'https://www.google.com?q=benmvp'
 ```
 
 As a last resort, you can simply include `url-lib.js` on your web page via a `<script>` tag and it will create a global `urllib` object, or define the module if you are using [RequireJS](http://requirejs.org/).
@@ -31,6 +31,7 @@ Coming soon...
 ## API
 
 - [`getCacheDefeatStr`](docs/getCacheDefeatStr.md) - Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
+- [`parseQuery`](docs/parseQuery.md) - Parses query parameters from a string, returning the query parameters as an object.
 
 ## Polyfills needed to support older browsers
 

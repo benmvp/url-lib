@@ -4,7 +4,7 @@
   "description": "A string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
   "main": "./url-lib.js",
   "scripts": {
-    "lint": "eslint ./",
+    "lint": "eslint .",
     "test": "mocha tests/*.js",
     "validate": "npm run lint && npm run test"
   },
