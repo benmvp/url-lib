@@ -1,10 +1,13 @@
 {
   "name": "url-lib",
   "version": "1.0.0",
-  "description": "A string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
+  "description": "A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
   "main": "./url-lib.js",
   "scripts": {
+    "build": "npm run minify && npm run gzip",
+    "gzip": "gzip -c dist/url-lib.min.js > dist/url-lib.min.js.gz",
     "lint": "eslint .",
+    "minify": "mkdir -p dist && uglifyjs --compress --mangle --comments --output dist/url-lib.min.js url-lib.js",
     "test": "mocha tests/*.js",
     "test-coverage": "istanbul cover _mocha -- -R spec tests/*.js",
     "test-coverage-ci": "istanbul cover _mocha --report lcovonly -- -R spec tests/*.js",
@@ -35,7 +38,8 @@
     "eslint": "^2.4.0",
     "istanbul": "^0.4.2",
     "lodash": "^4.6.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "uglify-js": "^2.6.2"
   },
   "engines": {
     "node": ">=0.10"
