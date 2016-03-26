@@ -18,10 +18,34 @@
 }(this, function () {
     'use strict';
 
-    var cacheDefeatStrCallCount = 0;
+    var cacheDefeatStrCallCount = 0,
+        hasOwnProperty = {}.hasOwnProperty;
 
     function _decode(str) {
-        return str !== undefined ? decodeURIComponent(str) : '';
+        return str != null ? decodeURIComponent(str) : '';
+    }
+
+    function _encode(str) {
+        return encodeURIComponent(str + '');
+    }
+
+    // Simplified Object.assign polyfill
+    function _merge(target) {
+        var output = new Object(target);
+
+        for (var argNo = 0; ++argNo < arguments.length;) {
+            var source = arguments[argNo];
+
+            if (source) {
+                for (var sourceKey in source) {
+                    if (hasOwnProperty.call(source, sourceKey)) {
+                        output[sourceKey] = source[sourceKey];
+                    }
+                }
+            }
+        }
+
+        return output;
     }
 
     function _splitOnQuery(url, favorQuery) {
@@ -44,7 +68,7 @@
 
     /**
     * Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
-    * @returns {String} Cache defeat string
+    * @returns {string} Cache defeat string
     */
     function getCacheDefeatStr() {
         // Three pieces of randomness:
@@ -54,12 +78,36 @@
         return (+new Date) + '' + Math.round(Math.random() * 1000) + cacheDefeatStrCallCount++;
     }
 
-    function formatQuery() {
+    /**
+    * Serializes the properties of a params object to produce a URL query string.
+    * @param {object|object[]} urlParams - An object (or array of objects) representing the query params to serialize
+    * @returns {string} Serialized query string
+    */
+    function formatQuery(urlParams) {
+        var urlParamPairs = [],
+            paramsObj = urlParams;
 
+        if (Array.isArray(paramsObj)) {
+            paramsObj = paramsObj.length < 2
+                ? paramsObj[0]
+                : _merge.apply(null, paramsObj);
+        }
+
+        for (var paramName in paramsObj) {
+            if (paramName) {
+                var paramValue = paramsObj[paramName];
+
+                if (paramValue != null) {
+                    urlParamPairs.push(_encode(paramName) + '=' + _encode(paramValue));
+                }
+            }
+        }
+
+        return urlParamPairs.join('&');
     }
 
     function formatUrl() {
-
+        return '';
     }
 
     /**
@@ -96,7 +144,7 @@
     }
 
     function parseUrl() {
-
+        return {};
     }
 
     return {

@@ -8,15 +8,15 @@ Parses query parameters from a string, returning the query parameters as an obje
 
 `parseQuery` assumes that the query string within `strToParse` was serialized using `&` to separate parameters, and `=` to separate parameter names from values in each name/value pair.
 
-## Example
+## Examples
 
 ```js
 var urllib = require('url-lib');
 
-var url = urllib.parseQuery('category=holiday&type=all&results=20');
+var paramsObj = urllib.parseQuery('category=holiday&type=all&results=20');
 ```
 
-With the above code, `url` will be the following object:
+With the above code, `paramsObj` will be the following object:
 
 ```js
 {
@@ -33,7 +33,7 @@ Therefore, the following code will have the same result as the above example:
 ```js
 var urllib = require('url-lib');
 
-var url = urllib.parseQuery('http://www.somedomain.com/search?category=holiday&type=all&results=20');
+var paramsObj = urllib.parseQuery('http://www.somedomain.com/search?category=holiday&type=all&results=20');
 ```
 
 ## Notes
