@@ -11,7 +11,7 @@ A simple, lightweight string utility for Node and browsers that supports seriali
 
 The primary use case is for building string URLs with query parameters for the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that is polyfilled in the browser via [`fetch`](https://github.com/github/fetch) and in Node via [`node-fetch`](https://github.com/bitinn/node-fetch) libraries. [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) combines the two.
 
-`url-lib` is derived from the [`Uize.Url`](https://github.com/UIZE/UIZE-JavaScript-Framework/blob/master/site-source/js/Uize/Url.js) module that is a part of the open-source [UIZE JavaScript Framework](https://github.com/UIZE/UIZE-JavaScript-Framework). It is [dependency-free](https://david-dm.org/benmvp/url-lib#info=dependencies), [heavily-tested](https://coveralls.io/github/benmvp/url-lib?branch=master), and less than 1KB when [minified](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) &  [gzipped](https://github.com/benmvp/url-lib/blob/master/dist/url-lib.min.js.gz).
+`url-lib` is derived from the [`Uize.Url`](https://github.com/UIZE/UIZE-JavaScript-Framework/blob/master/site-source/js/Uize/Url.js) module that is a part of the open-source [UIZE JavaScript Framework](https://github.com/UIZE/UIZE-JavaScript-Framework). It is [dependency-free](https://david-dm.org/benmvp/url-lib#info=dependencies), [heavily-tested](https://coveralls.io/github/benmvp/url-lib?branch=master), and **under 1KB** when [minified](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) &  [gzipped](https://github.com/benmvp/url-lib/blob/master/dist/url-lib.min.js.gz).
 
 ## Installation
 
