@@ -1,5 +1,5 @@
 /**
-  @preserve Copyright (c) 2016 Ben Ilegbodu.
+  Copyright (c) 2016 Ben Ilegbodu.
   Licensed under the MIT License (MIT).
   See: https://github.com/benmvp/url-lib.
   Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.

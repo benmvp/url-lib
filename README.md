@@ -70,7 +70,7 @@ Coming soon... 😀
 
 We take the stability of this utility package **very** seriously. `url-lib` follows the [SemVer](http://semver.org/) standard for versioning.
 
-All updates must not break the [CI build](https://travis-ci.org/benmvp/url-lib) nor go below the [98%+ code coverage](https://coveralls.io/github/benmvp/url-lib?branch=master).
+All updates must not break the [CI build](https://travis-ci.org/benmvp/url-lib) nor go below the [90%+ code coverage](https://coveralls.io/github/benmvp/url-lib?branch=master).
 
 ## License
 
