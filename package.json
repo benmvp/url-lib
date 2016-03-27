@@ -1,6 +1,6 @@
 {
   "name": "url-lib",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
   "main": "./index.js",
   "scripts": {
@@ -8,15 +8,25 @@
     "gzip": "npm run gzip-core && npm run gzip-all",
     "gzip-all": "gzip -c dist/url-lib.min.js > dist/url-lib.min.js.gz",
     "gzip-core": "gzip -c dist/url-lib-core.min.js > dist/url-lib-core.min.js.gz",
-    "lint": "eslint .",
     "minify": "mkdir -p dist && npm run minify-core && npm run minify-all",
     "minify-all": "cat index.js getCacheDefeatStr.js parseUrl.js | uglifyjs --compress --mangle --comments --output dist/url-lib.min.js",
     "minify-core": "uglifyjs --compress --mangle --comments --output dist/url-lib-core.min.js index.js",
+
+    "lint": "eslint .",
     "test": "mocha tests/*.js",
     "test-coverage": "istanbul cover _mocha -- -R spec tests/*.js",
     "test-coverage-ci": "istanbul cover _mocha --report lcovonly -- -R spec tests/*.js",
     "validate": "npm run lint && npm run test",
-    "validate-ci": "npm run lint && npm run test-coverage-ci"
+    "validate-ci": "npm run lint && npm run test-coverage-ci",
+
+    "preversion": "npm run validate",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags",
+
+    "release": "npm run release-patch",
+    "release-patch": "npm version patch && npm publish",
+    "release-minor": "npm version minor && npm publish",
+    "release-major": "npm version major && npm publish"
   },
   "repository": {
     "type": "git",
