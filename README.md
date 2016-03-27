@@ -16,7 +16,7 @@ The primary use case is for building string URLs with query parameters for the [
 
 ## Installation
 
-Install via [NPM](https://docs.npmjs.com/getting-started/installing-npm-packages-locally) (coming soon!):
+Install via [NPM](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
 npm install --save url-lib
