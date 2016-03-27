@@ -21,9 +21,9 @@
     "version": "npm run build && git add -A dist",
     "postversion": "git push && git push --tags",
     "release": "npm run release-patch",
-    "release-patch": "npm version patch && npm publish",
-    "release-minor": "npm version minor && npm publish",
-    "release-major": "npm version major && npm publish"
+    "release-patch": "npm version patch --mesage 'Patch release v%s' && npm publish",
+    "release-minor": "npm version minor --message 'Minor release v%s' && npm publish",
+    "release-major": "npm version major --message 'Major release v%s' && npm publish"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "parse",
     "query",
     "query+string",
-    "resolve"
+    "format"
   ],
   "author": "Ben Ilegbodu",
   "license": "MIT",
