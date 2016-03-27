@@ -1,26 +1,7 @@
 var expect = require('chai').expect,
-    urllib = require('../url-lib');
+    urllib = require('../');
 
-describe('url-lib', function() {
-    describe('getCacheDefeatStr', function() {
-        it('returns a non-empty string', function() {
-            var cacheDefeatStr = urllib.getCacheDefeatStr();
-
-            expect(cacheDefeatStr).to.be.a('string');
-            expect(cacheDefeatStr).to.not.be.empty;
-        });
-
-        it('returns different values for successive calls', function() {
-            var results = {};
-
-            for (var callNo =-1; ++callNo < 10;) {
-                results[urllib.getCacheDefeatStr()] = 1;
-            }
-
-            expect(Object.keys(results).length).to.equal(10);
-        });
-    });
-
+describe('core', function() {
     describe('parseQuery', function() {
         it('returns an empty object when no parameters are passed', function() {
             var paramsObj = urllib.parseQuery();
@@ -113,7 +94,7 @@ describe('url-lib', function() {
         });
 
         it('ignores params without a name and does not include in resultant object', function() {
-            var paramsObj = urllib.parseQuery('http://www.uize.com?=blah&param=foo');
+            var paramsObj = urllib.parseQuery('http://www.benmvp.com?=blah&param=foo');
 
             expect(paramsObj).to.deep.equal({param: 'foo'});
         });

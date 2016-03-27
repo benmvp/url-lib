@@ -196,6 +196,8 @@ var defaultSearchSettings = {
 ```
 
 ## Notes
+
+- `formatUrl` is part of the core `url-lib` module
 - `formatUrl` coerces all param values to string (so objects with custom `.toString()` methods can be serialized)
 - See also the companion [`parseUrl`](parseUrl.md)
 - See also the related [`formatQuery`](formatQuery.md)

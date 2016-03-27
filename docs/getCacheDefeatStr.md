@@ -4,18 +4,23 @@ Returns a string value (generated using the time and a random number) that can b
 
 ## Syntax
 
-`string = urllib.getCacheDefeatStr()`
+`string = getCacheDefeatStr()`
 
 ## Example
 
 ```js
-var urllib = require('url-lib');
+var urllib = require('url-lib'),
+    getCacheDefeatStr = require('url-lib/getCacheDefeatStr');
 
 var url = urllib.formatUrl(
     'http://www.foo.com',
     {
         q: 'benmvp',
-        r: urllib.getCacheDefeatStr()
+        r: getCacheDefeatStr()
     }
 )
 ```
+
+## Notes
+
+- `getCacheDefeatStr` is provided in a separate add-on module (`url-lib/getCacheDefeatStr'`)

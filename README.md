@@ -11,7 +11,7 @@ A simple, lightweight string utility for Node and browsers that supports seriali
 
 The primary use case is for building string URLs with query parameters for the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that is polyfilled in the browser via [`fetch`](https://github.com/github/fetch) and in Node via [`node-fetch`](https://github.com/bitinn/node-fetch) libraries. [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) combines the two.
 
-`url-lib` is derived from the [`Uize.Url`](https://github.com/UIZE/UIZE-JavaScript-Framework/blob/master/site-source/js/Uize/Url.js) module that is a part of the open-source [UIZE JavaScript Framework](https://github.com/UIZE/UIZE-JavaScript-Framework). It is [dependency-free](https://david-dm.org/benmvp/url-lib#info=dependencies), [heavily-tested](https://coveralls.io/github/benmvp/url-lib?branch=master), [well-documented](docs/), and **under 1KB** when [minified](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) &  [gzipped](https://github.com/benmvp/url-lib/blob/master/dist/url-lib.min.js.gz).
+`url-lib` is derived from the [`Uize.Url`](https://github.com/UIZE/UIZE-JavaScript-Framework/blob/master/site-source/js/Uize/Url.js) module that is a part of the open-source [UIZE JavaScript Framework](https://github.com/UIZE/UIZE-JavaScript-Framework). It is stable, [dependency-free](https://david-dm.org/benmvp/url-lib#info=dependencies), [heavily-tested](https://coveralls.io/github/benmvp/url-lib?branch=master), [well-documented](docs/), and **under 800B** when [minified](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib-core.min.js) & [gzipped](https://github.com/benmvp/url-lib/blob/master/dist/url-lib-core.min.js.gz).
 
 ## Installation
 
@@ -28,7 +28,7 @@ import * as urllib from 'url-lib'; // ES6+
 var urllib = require('url-lib'); // ES5-
 ```
 
-As a last resort, you can download [`dist/url-lib.min.js`](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) and include it on your web page via a `<script>` tag. It will create a global `window.urllib` object (or define the module if you are using [RequireJS](http://requirejs.org/)):
+As a last resort, you can download [`dist/url-lib.min.js`](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) (or just [`dist/url-lib-core.min.js`](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib-core.min.js)) and include it on your web page via a `<script>` tag. It will create a global `window.urllib` object (or define the module if you are using [RequireJS](http://requirejs.org/)):
 
 ```html
 <script src="/lib/url-lib.min.js" type="text/javascript"></script>
@@ -56,11 +56,21 @@ Check out the [docs](docs/) for more usage examples...
 - [`formatUrl`](docs/formatUrl.md) - Serializes the specified URL path with properties of a params object to produce a URL.
 - [`getCacheDefeatStr`](docs/getCacheDefeatStr.md) - Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
 - [`parseQuery`](docs/parseQuery.md) - Parses query parameters from a string, returning the query parameters as an object.
-- `parseUrl` - _Coming soon..._
+- [`parseUrl`](docs/parseUrl.md) - Parses the specified URL string into an object containing properties for the various logical segments.
 
 ## Polyfills needed to support older browsers
 
 - `Array.isArray`: see [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray) for details about unsupported older browsers (e.g. IE8-) and a simple polyfill (or use [`es5-shim`](https://github.com/es-shims/es5-shim))
+
+## Contributing
+
+Coming soon... 😀
+
+## Project philosophy
+
+We take the stability of this utility package **very** seriously. `url-lib` follows the [SemVer](http://semver.org/) standard for versioning.
+
+All updates must not break the [CI build](https://travis-ci.org/benmvp/url-lib) nor go below the [98%+ code coverage](https://coveralls.io/github/benmvp/url-lib?branch=master).
 
 ## License
 

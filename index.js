@@ -4,7 +4,6 @@
   See: https://github.com/benmvp/url-lib.
   Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
 */
-
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define([], factory);
@@ -18,8 +17,7 @@
 }(this, function() {
     'use strict';
 
-    var cacheDefeatStrCallCount = 0,
-        hasOwnProperty = {}.hasOwnProperty,
+    var hasOwnProperty = {}.hasOwnProperty,
         sacredEmptyArray = [];
 
     function _decode(str) {
@@ -65,18 +63,6 @@
             urlPath: urlString.slice(0, queryPos),
             queryString: urlString.slice(queryPos + 1)
         };
-    }
-
-    /**
-    * Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
-    * @returns {string} Cache defeat string
-    */
-    function getCacheDefeatStr() {
-        // Three pieces of randomness:
-        // - current time
-        // - random number between 1-1000
-        // - continuously incrementing counter
-        return (+new Date()) + '' + Math.round(Math.random() * 1000) + cacheDefeatStrCallCount++;
     }
 
     /**
@@ -140,6 +126,12 @@
         return urlParams;
     }
 
+    /**
+    * Serializes the specified URL path with properties of a params object to produce a URL.
+    * @param {string | array} urlPath - Base URL path
+    * @param {object | object[]} urlParams - Query params to combine with base URL
+    * @returns {string} Serialized URL
+    */
     function formatUrl(urlPath, urlParams) {
         var formattedUrl = urlPath,
             queryParams = urlParams,
@@ -173,14 +165,8 @@
             + queryString;
     }
 
-    function parseUrl() {
-        return {};
-    }
-
     return {
-        getCacheDefeatStr: getCacheDefeatStr,
         parseQuery: parseQuery,
-        parseUrl: parseUrl,
         formatUrl: formatUrl,
         formatQuery: formatQuery
     };

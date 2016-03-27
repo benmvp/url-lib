@@ -38,5 +38,7 @@ var paramsObj = urllib.parseQuery('http://www.somedomain.com/search?category=hol
 
 ## Notes
 
+- `parseQuery` is part of the core `url-lib` module
 - When parsing the query string, all parameter values are treated as strings
 - See also the companion [`formatQuery`](formatQuery.md)
+- See also the related [`parseUrl`](parseUrl.md)

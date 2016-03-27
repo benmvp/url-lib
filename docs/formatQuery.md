@@ -46,6 +46,7 @@ With the above code, `queryString` will be `'sort=popular&type=all&results=20&ca
 
 ## Notes
 
+- `formatQuery` is part of the core `url-lib` module
 - `formatQuery` does not prepend the query `?` character to the resultant query string
 - `formatQuery` coerces all param values to string (so objects with custom `.toString()` methods can be serialized)
 - See also the companion [`parseQuery`](parseQuery.md)
