@@ -11,7 +11,7 @@ A simple, lightweight string utility for Node and browsers that supports seriali
 
 The primary use case is for building string URLs with query parameters for the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that is polyfilled in the browser via [`fetch`](https://github.com/github/fetch) and in Node via [`node-fetch`](https://github.com/bitinn/node-fetch) libraries. [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) combines the two.
 
-`url-lib` is derived from the [`Uize.Url`](https://github.com/UIZE/UIZE-JavaScript-Framework/blob/master/site-source/js/Uize/Url.js) module that is a part of the open-source [UIZE JavaScript Framework](https://github.com/UIZE/UIZE-JavaScript-Framework). It is [dependency-free](https://david-dm.org/benmvp/url-lib#info=dependencies), [heavily-tested](https://coveralls.io/github/benmvp/url-lib?branch=master), and **under 1KB** when [minified](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) &  [gzipped](https://github.com/benmvp/url-lib/blob/master/dist/url-lib.min.js.gz).
+`url-lib` is derived from the [`Uize.Url`](https://github.com/UIZE/UIZE-JavaScript-Framework/blob/master/site-source/js/Uize/Url.js) module that is a part of the open-source [UIZE JavaScript Framework](https://github.com/UIZE/UIZE-JavaScript-Framework). It is [dependency-free](https://david-dm.org/benmvp/url-lib#info=dependencies), [heavily-tested](https://coveralls.io/github/benmvp/url-lib?branch=master), [well-documented](docs/), and **under 1KB** when [minified](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) &  [gzipped](https://github.com/benmvp/url-lib/blob/master/dist/url-lib.min.js.gz).
 
 ## Installation
 
@@ -28,7 +28,7 @@ import * as urllib from 'url-lib'; // ES6+
 var urllib = require('url-lib'); // ES5-
 ```
 
-As a last resort, you can download [`dist/url-lib.js`](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) and include it on your web page via a `<script>` tag. It will create a global `window.urllib` object (or define the module if you are using [RequireJS](http://requirejs.org/)):
+As a last resort, you can download [`dist/url-lib.min.js`](https://raw.githubusercontent.com/benmvp/url-lib/master/dist/url-lib.min.js) and include it on your web page via a `<script>` tag. It will create a global `window.urllib` object (or define the module if you are using [RequireJS](http://requirejs.org/)):
 
 ```html
 <script src="/lib/url-lib.min.js" type="text/javascript"></script>
@@ -36,12 +36,24 @@ As a last resort, you can download [`dist/url-lib.js`](https://raw.githubusercon
 
 ## Usage
 
-Coming soon...
+```js
+var urllib = require('url-lib');
+
+var url = urllib.formatUrl('http://www.benmvp.com/search', {
+    category: 'holiday',
+    type: 'all',
+    results: 20
+});
+```
+
+With the above code, `url` will be `'http://www.benmvp.com/search?category=holiday&type=all&results=20'`.
+
+Check out the [docs](docs/) for more usage examples...
 
 ## API Docs
 
 - [`formatQuery`](docs/formatQuery.md) - Serializes the properties of a params object to produce a URL query string.
-- `formatUrl` - _Coming soon..._
+- [`formatUrl`](docs/formatUrl.md) - Serializes the specified URL path with properties of a params object to produce a URL.
 - [`getCacheDefeatStr`](docs/getCacheDefeatStr.md) - Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
 - [`parseQuery`](docs/parseQuery.md) - Parses query parameters from a string, returning the query parameters as an object.
 - `parseUrl` - _Coming soon..._

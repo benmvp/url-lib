@@ -2,10 +2,10 @@
   @preserve Copyright (c) 2016 Ben Ilegbodu.
   Licensed under the MIT License (MIT).
   See: https://github.com/benmvp/url-lib.
-  Adapted from Uize.Url module.
+  Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
 */
 
-(function (root, factory) {
+(function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define([], factory);
     }
@@ -15,11 +15,12 @@
 	else {
         root.urllib = factory();
     }
-}(this, function () {
+}(this, function() {
     'use strict';
 
     var cacheDefeatStrCallCount = 0,
-        hasOwnProperty = {}.hasOwnProperty;
+        hasOwnProperty = {}.hasOwnProperty,
+        sacredEmptyArray = [];
 
     function _decode(str) {
         return str != null ? decodeURIComponent(str) : '';
@@ -75,7 +76,7 @@
         // - current time
         // - random number between 1-1000
         // - continuously incrementing counter
-        return (+new Date) + '' + Math.round(Math.random() * 1000) + cacheDefeatStrCallCount++;
+        return (+new Date()) + '' + Math.round(Math.random() * 1000) + cacheDefeatStrCallCount++;
     }
 
     /**
@@ -104,10 +105,6 @@
         }
 
         return urlParamPairs.join('&');
-    }
-
-    function formatUrl() {
-        return '';
     }
 
     /**
@@ -141,6 +138,39 @@
         }
 
         return urlParams;
+    }
+
+    function formatUrl(urlPath, urlParams) {
+        var formattedUrl = urlPath,
+            queryParams = urlParams,
+            parsedQueryParamsFromUrl,
+            queryParamsAsArray,
+            queryString;
+
+        // if they passed an array as the first parameter, separate out the first
+        // element (url) from the other elements (query params list)
+        if (Array.isArray(formattedUrl)) {
+            queryParams = formattedUrl.slice(1).concat(queryParams || sacredEmptyArray);
+            formattedUrl = formattedUrl[0];
+        }
+
+        // Pull out any query params from the URL
+        parsedQueryParamsFromUrl = parseQuery(formattedUrl, false);
+
+        // Convert the query params into an array (if it already isn't)
+        queryParamsAsArray = Array.isArray(queryParams) ? queryParams : [queryParams];
+
+        // Merge the URL query params to the additional query params
+        queryParams = [parsedQueryParamsFromUrl].concat(queryParamsAsArray);
+
+        // Serialize the query params to a query string
+        queryString = formatQuery(queryParams);
+
+        // Finally build the URL by stripping out any query string from the URL and
+        // appending the query string
+        return _splitOnQuery(formattedUrl).urlPath
+            + (queryString ? '?' : '')
+            + queryString;
     }
 
     function parseUrl() {

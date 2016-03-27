@@ -23,7 +23,7 @@
     "serialization",
     "parse",
     "query",
-    "querystring",
+    "query+string",
     "resolve"
   ],
   "author": "Ben Ilegbodu",
@@ -37,7 +37,6 @@
     "coveralls": "^2.11.9",
     "eslint": "^2.4.0",
     "istanbul": "^0.4.2",
-    "lodash": "^4.6.1",
     "mocha": "^2.4.5",
     "pre-commit": "^1.1.2",
     "uglify-js": "^2.6.2"
@@ -46,6 +45,6 @@
     "node": ">=0.10"
   },
   "pre-commit": [
-      "validate"
+    "validate"
   ]
 }

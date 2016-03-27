@@ -17,6 +17,7 @@
         "eqeqeq": [2, "smart"],
         "indent": 2,
         "key-spacing": 2,
+        "new-parens": 2,
         "newline-after-var": 2,
         "no-multi-spaces": 2,
         "no-native-reassign": 2,
@@ -30,6 +31,7 @@
         "operator-linebreak": [2, "before"],
         "quotes": [2, "single"],
         "space-before-blocks": 2,
+        "space-before-function-paren": [2, "never"],
         "semi": 2,
         "valid-jsdoc": 2
     }
