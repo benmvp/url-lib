@@ -49,7 +49,7 @@ var url = urllib.formatUrl('http://www.benmvp.com/search', {
 
 With the above code, `url` will be `'http://www.benmvp.com/search?category=holiday&type=all&results=20'`.
 
-Check out the [docs](docs/) for more usage examples...
+Check out the [docs](docs/) for more usage examples or [try out `url-lib` in your browser!](https://tonicdev.com/npm/url-lib)
 
 ## API Docs
 
