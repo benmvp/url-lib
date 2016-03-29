@@ -136,7 +136,7 @@
         var formattedUrl = urlPath,
             queryParams = urlParams,
             parsedQueryParamsFromUrl,
-            queryParamsAsArray,
+            normalizedQueryParams,
             queryString;
 
         // if they passed an array as the first parameter, separate out the first
@@ -150,10 +150,10 @@
         parsedQueryParamsFromUrl = parseQuery(formattedUrl, false);
 
         // Convert the query params into an array (if it already isn't)
-        queryParamsAsArray = Array.isArray(queryParams) ? queryParams : [queryParams];
+        normalizedQueryParams = Array.isArray(queryParams) ? queryParams : [queryParams];
 
         // Merge the URL query params to the additional query params
-        queryParams = [parsedQueryParamsFromUrl].concat(queryParamsAsArray);
+        queryParams = [parsedQueryParamsFromUrl].concat(normalizedQueryParams);
 
         // Serialize the query params to a query string
         queryString = formatQuery(queryParams);
