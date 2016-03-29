@@ -40,14 +40,15 @@ As a last resort, you can download [`dist/url-lib.min.js`](https://raw.githubuse
 ```js
 var urllib = require('url-lib');
 
-var url = urllib.formatUrl('http://www.benmvp.com/search', {
+var url = urllib.formatUrl('http://www.benmvp.com/search?sort=recent&results=20&pg=1', {
+    sort: 'popular',        // overwrites existing `sort` param in URL
     category: 'holiday',
     type: 'all',
-    results: 20
+    results: 100            // overwrites existing `results` param in URL
 });
 ```
 
-With the above code, `url` will be `'http://www.benmvp.com/search?category=holiday&type=all&results=20'`.
+With the above code, `url` will be `'http://www.benmvp.com/search?sort=popular&results=100&pg=1&category=holiday&type=all'`
 
 Check out the [docs](docs/) for more usage examples or [try out `url-lib` in your browser!](https://tonicdev.com/npm/url-lib)
 
