@@ -35,7 +35,8 @@
     "parse",
     "query",
     "query+string",
-    "format"
+    "format",
+    "fetch"
   ],
   "author": "Ben Ilegbodu",
   "license": "MIT",
