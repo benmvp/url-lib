@@ -6,6 +6,7 @@
 [![Dependencies status](https://img.shields.io/david/benmvp/url-lib.svg?style=flat-square)](https://david-dm.org/benmvp/url-lib#info=dependencies)
 [![Dev Dependencies status](https://img.shields.io/david/dev/benmvp/url-lib.svg?style=flat-square)](https://david-dm.org/benmvp/url-lib#info=devDependencies)
 [![downloads](https://img.shields.io/npm/dt/url-lib.svg?style=flat-square)](http://npm-stat.com/charts.html?package=url-lib&from=2016-03-27)
+[![Maintenance Status](https://img.shields.io/badge/status-maintained-brightgreen.svg)](https://github.com/yannickcr/eslint-plugin-react/pulse)
 [![license](https://img.shields.io/npm/l/url-lib.svg?style=flat-square)](http://spdx.org/licenses/MIT)
 
 A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.
