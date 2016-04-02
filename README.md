@@ -67,7 +67,7 @@ Check out the [docs](docs/) for more usage examples or [try out `url-lib` in you
 
 ## Contributing
 
-Coming soon... 😀
+Contributions are welcome! More details coming soon... 😀
 
 ## Project philosophy
 
