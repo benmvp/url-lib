@@ -4,15 +4,15 @@
   See: https://github.com/benmvp/url-lib.
   Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
 */
-(function(root, factory) {
+(function(global, factory) {
     if (typeof define === 'function' && define.amd) {
-        define([], factory);
+        define(factory);
     }
     else if (typeof module === 'object' && module.exports) {
         module.exports = factory();
     }
 	else {
-        root.urllib = factory();
+        global.urllib = factory();
     }
 }(this, function() {
     'use strict';
