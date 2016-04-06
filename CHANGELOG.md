@@ -1,3 +1,7 @@
+## v2.0.0 (April 6, 2016)
+- [major] `url-lib` now requires [additional ES5 features](./#polyfills-needed-to-support-older-browsers)
+- [minor] Update code to pass [`eslint-config-benmvp`](https://github.com/benmvp/eslint-config-benmvp) (v2.0.1)
+
 ## v1.0.3 (April 1, 2016)
 - [minor] Fix UMD script for `parseUrl.js` & `getCacheDefeatStr.js`
 
