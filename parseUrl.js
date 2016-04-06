@@ -4,7 +4,8 @@
   See: https://github.com/benmvp/url-lib.
   Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
 */
-(function(root, factory) {
+(function(factory) {
+    /* istanbul ignore next */
     if (typeof define === 'function' && define.amd) {
         define(factory);
     }
@@ -12,13 +13,13 @@
         module.exports = factory();
     }
 	else {
-        root.urllib.parseUrl = factory();
+        window.urllib.parseUrl = factory();
     }
-}(this, function() {
+})(function() {
     'use strict';
 
-    var urlRegExp = /^(([^:\\\/]+:)\/\/(([^:\\\/]*)(:(\d+))?)?)?(([^\?#]*[\\\/])?(([^\\\/\?#]*?)(\.([^\.\?#]+))?))(\?([^#]*))?(#(.*))?$/,
-        urlSegments = [     // * properties marked '*' are consistent with browser's location object
+    var URL_REG_EXP = /^(([^:\\\/]+:)\/\/(([^:\\\/]*)(:(\d+))?)?)?(([^\?#]*[\\\/])?(([^\\\/\?#]*?)(\.([^\.\?#]+))?))(\?([^#]*))?(#(.*))?$/,
+        URL_SEGMENTS = [     // * properties marked '*' are consistent with browser's location object
             'href',         // * eg. http://benmvp.com:80/docs/url-lib.html?param=value#anchor
             'fullDomain',   //   eg. http://benmvp.com:80
             'protocol',     // * eg. http:
@@ -44,8 +45,7 @@
     * @returns {object} URL segments as an object
     */
     function parseUrl(url) {
-        var urlSegmentsMatch = url && url.match(urlRegExp),
-            parsedUrl = {};
+        var urlSegmentsMatch = url && url.match(URL_REG_EXP);
 
         function getUrlSegment(segmentNo) {
             return urlSegmentsMatch
@@ -53,16 +53,16 @@
                 : '';
         }
 
-        for (var segmentNo = -1; ++segmentNo < urlSegments.length;) {
-            var segmentName = urlSegments[segmentNo];
+        return URL_SEGMENTS.reduce(function(prevParsedUrl, segmentName, segmentNo) {
+            var parsedUrl = prevParsedUrl;
 
             if (segmentName) {
-                parsedUrl[urlSegments[segmentNo]] = getUrlSegment(segmentNo);
+                parsedUrl[segmentName] = getUrlSegment(segmentNo);
             }
-        }
 
-        return parsedUrl;
+            return parsedUrl;
+        }, {});
     }
 
     return parseUrl;
-}));
+});

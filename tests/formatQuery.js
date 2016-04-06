@@ -1,6 +1,8 @@
+/*eslint no-new-wrappers: "off"*/
+
 var expect = require('chai').expect,
     urllib = require('../');
-    
+
 describe('formatQuery', function() {
     it('returns an empty string when no parameters are passed', function() {
         var queryString = urllib.formatQuery();

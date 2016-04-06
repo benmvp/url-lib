@@ -4,7 +4,8 @@
   See: https://github.com/benmvp/url-lib.
   Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
 */
-(function(global, factory) {
+(function(factory) {
+    /* istanbul ignore next */
     if (typeof define === 'function' && define.amd) {
         define(factory);
     }
@@ -12,13 +13,14 @@
         module.exports = factory();
     }
 	else {
-        global.urllib = factory();
+        window.urllib = factory();
     }
-}(this, function() {
+})(function() {
     'use strict';
 
-    var hasOwnProperty = {}.hasOwnProperty,
-        sacredEmptyArray = [];
+    var immutableEmptyObject = {},
+        immutableEmptyArray = [],
+        hasOwnProperty = immutableEmptyObject.hasOwnProperty;
 
     function _decode(str) {
         return str != null ? decodeURIComponent(str) : '';
@@ -30,13 +32,17 @@
 
     // Simplified Object.assign polyfill
     function _merge(target) {
-        var output = new Object(target);
+        var output = new Object(target),
+            argNo = 0,
+            source,
+            sourceKey;
 
-        for (var argNo = 0; ++argNo < arguments.length;) {
-            var source = arguments[argNo];
+        for (; ++argNo < arguments.length;) {
+            source = arguments[argNo];
 
             if (source) {
-                for (var sourceKey in source) {
+                for (sourceKey in source) {
+                    /* istanbul ignore else  */
                     if (hasOwnProperty.call(source, sourceKey)) {
                         output[sourceKey] = source[sourceKey];
                     }
@@ -71,8 +77,7 @@
     * @returns {string} Serialized query string
     */
     function formatQuery(urlParams) {
-        var urlParamPairs = [],
-            paramsObj = urlParams;
+        var paramsObj = urlParams;
 
         if (Array.isArray(paramsObj)) {
             paramsObj = paramsObj.length < 2
@@ -80,17 +85,24 @@
                 : _merge.apply(null, paramsObj);
         }
 
-        for (var paramName in paramsObj) {
-            if (paramName) {
-                var paramValue = paramsObj[paramName];
+        paramsObj = paramsObj || immutableEmptyObject;
 
-                if (paramValue != null) {
-                    urlParamPairs.push(_encode(paramName) + '=' + _encode(paramValue));
+        return Object.keys(paramsObj)
+            .reduce(function(prevUrlParamPairs, paramName) {
+                var urlParamPairs = prevUrlParamPairs,
+                    paramValue;
+
+                if (paramName) {
+                    paramValue = paramsObj[paramName];
+
+                    if (paramValue != null) {
+                        urlParamPairs.push(_encode(paramName) + '=' + _encode(paramValue));
+                    }
                 }
-            }
-        }
 
-        return urlParamPairs.join('&');
+                return urlParamPairs;
+            }, [])
+            .join('&');
     }
 
     /**
@@ -100,30 +112,22 @@
     * @returns {object} Parsed query parameters
     */
     function parseQuery(strToParse, favorQuery) {
-        var urlParams = {},
+        // Ensure that all we parse is a query string
+        var queryString = _splitOnQuery(strToParse, favorQuery !== false).queryString || '';
 
-            // Ensure that all we parse is a query string
-            queryString = _splitOnQuery(
-                strToParse,
-                favorQuery !== false
-            ).queryString;
-
-        if (queryString) {
-            var urlParamPairs = queryString.split('&'),
-                urlParamPairsLength = urlParamPairs.length;
-
-            // Loop through all of the pairs and add to urlParams the decoded name & value
-            for (var urlParamPairNo = -1; ++urlParamPairNo < urlParamPairsLength;) {
-                var urlParamPair = urlParamPairs[urlParamPairNo].split('=');
-                var urlParamNameEncoded = urlParamPair[0];
+        return queryString
+            .split('&')
+            .reduce(function(prevUrlParams, serializedUrlParamPair) {
+                var urlParams = prevUrlParams,
+                    urlParamPair = serializedUrlParamPair.split('='),
+                    urlParamNameEncoded = urlParamPair[0];
 
                 if (urlParamNameEncoded) {
                     urlParams[_decode(urlParamNameEncoded)] = _decode(urlParamPair[1]);
                 }
-            }
-        }
 
-        return urlParams;
+                return urlParams;
+            }, {});
     }
 
     /**
@@ -142,7 +146,7 @@
         // if they passed an array as the first parameter, separate out the first
         // element (url) from the other elements (query params list)
         if (Array.isArray(formattedUrl)) {
-            queryParams = formattedUrl.slice(1).concat(queryParams || sacredEmptyArray);
+            queryParams = formattedUrl.slice(1).concat(queryParams || immutableEmptyArray);
             formattedUrl = formattedUrl[0];
         }
 
@@ -170,4 +174,4 @@
         formatUrl: formatUrl,
         formatQuery: formatQuery
     };
-}));
+});

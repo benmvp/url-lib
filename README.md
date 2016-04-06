@@ -63,17 +63,23 @@ Check out the [docs](docs/) for more usage examples or [try out `url-lib` in you
 
 ## Polyfills needed to support older browsers
 
-- `Array.isArray`: see [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray) for details about unsupported older browsers (e.g. IE8-) and a simple polyfill (or use [`es5-shim`](https://github.com/es-shims/es5-shim))
+`url-lib` uses a number of ES5 features that are unsupported in older browsers (e.g. IE8-). The easiest way to add support to non-ES5 browsers is to use [`es5-shim`](https://github.com/es-shims/es5-shim).
+
+Specifically the ES5 features in use are:
+
+- [`Array.isArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+- [`Array.prototype.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+- [`Object.keys`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
 ## Contributing
 
-Contributions are welcome! More details coming soon... 😀
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 ## Project philosophy
 
 We take the stability of this utility package **very** seriously. `url-lib` follows the [SemVer](http://semver.org/) standard for versioning.
 
-All updates must not break the [CI build](https://travis-ci.org/benmvp/url-lib) nor go below the [90%+ code coverage](https://coveralls.io/github/benmvp/url-lib?branch=master).
+All updates must pass the [CI build](https://travis-ci.org/benmvp/url-lib) while maintaining [100% code coverage](https://coveralls.io/github/benmvp/url-lib).
 
 ## License
 

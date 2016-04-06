@@ -1,3 +1,5 @@
+/*eslint no-unused-expressions: "off"*/
+
 var expect = require('chai').expect,
     getCacheDefeatStr = require('../getCacheDefeatStr');
 
@@ -10,9 +12,10 @@ describe('getCacheDefeatStr', function() {
     });
 
     it('returns different values for successive calls', function() {
-        var results = {};
+        var results = {},
+            callNo =-1;
 
-        for (var callNo =-1; ++callNo < 10;) {
+        for (; ++callNo < 10;) {
             results[getCacheDefeatStr()] = 1;
         }
 

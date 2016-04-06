@@ -4,7 +4,8 @@
   See: https://github.com/benmvp/url-lib.
   Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
 */
-(function(root, factory) {
+(function(factory) {
+    /* istanbul ignore next */
     if (typeof define === 'function' && define.amd) {
         define(factory);
     }
@@ -12,9 +13,9 @@
         module.exports = factory();
     }
 	else {
-        root.urllib.getCacheDefeatStr = factory();
+        window.urllib.getCacheDefeatStr = factory();
     }
-}(this, function() {
+})(function() {
     'use strict';
 
     var cacheDefeatStrCallCount = 0;
@@ -32,4 +33,4 @@
     }
 
     return getCacheDefeatStr;
-}));
+});

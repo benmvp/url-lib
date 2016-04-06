@@ -1,3 +1,5 @@
+/*eslint no-new-wrappers: "off"*/
+
 var expect = require('chai').expect,
     urllib = require('../');
 
