@@ -21,7 +21,6 @@
     "preversion": "npm run validate",
     "version": "npm run build && git add -A dist",
     "postversion": "git push && git push --tags",
-    "release": "npm run release:patch",
     "release:patch": "npm version patch --message 'Patch release v%s' && npm publish",
     "release:minor": "npm version minor --message 'Minor release v%s' && npm publish",
     "release:major": "npm version major --message 'Major release v%s' && npm publish"
