@@ -1,3 +1,7 @@
+## v2.0.2 (May 24, 2016)
+- [patch] `dist/` folder now includes unminified files
+- [dev-ops] Adding additional & renaming existing npm scripts
+
 ## v2.0.0 (April 6, 2016)
 - [major] `url-lib` now requires [additional ES5 features](./#polyfills-needed-to-support-older-browsers)
 - [minor] Update code to pass [`eslint-config-benmvp`](https://github.com/benmvp/eslint-config-benmvp) (v2.0.1)
