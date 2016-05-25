@@ -1,6 +1,6 @@
 {
   "name": "url-lib",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
   "main": "./index.js",
   "scripts": {
