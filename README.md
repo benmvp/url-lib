@@ -36,6 +36,8 @@ As a last resort, you can download [`dist/url-lib.min.js`](https://raw.githubuse
 <script src="/lib/url-lib.min.js" type="text/javascript"></script>
 ```
 
+_NOTE:_ [`formatQuery`](docs/formatQuery.md), [`formatUrl`](docs/formatUrl.md) and [`parseQuery`](docs/parseQuery.md) are included in the "core" dist.
+
 ## Usage
 
 ```js
@@ -57,8 +59,8 @@ Check out the [docs](docs/) for more usage examples or [try out `url-lib` in you
 
 - [`formatQuery`](docs/formatQuery.md) - Serializes the properties of a params object to produce a URL query string.
 - [`formatUrl`](docs/formatUrl.md) - Serializes the specified URL path with properties of a params object to produce a URL.
-- [`getCacheDefeatStr`](docs/getCacheDefeatStr.md) - Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
 - [`parseQuery`](docs/parseQuery.md) - Parses query parameters from a string, returning the query parameters as an object.
+- [`getCacheDefeatStr`](docs/getCacheDefeatStr.md) - Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
 - [`parseUrl`](docs/parseUrl.md) - Parses the specified URL string into an object containing properties for the various logical segments.
 
 ## Polyfills needed to support older browsers
