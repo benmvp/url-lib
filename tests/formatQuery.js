@@ -17,6 +17,7 @@ describe('formatQuery', function() {
     });
 
     it('returns an empty string when `undefined` is passed passed', function() {
+        // eslint-disable-next-line no-undefined
         var queryString = urllib.formatQuery(undefined);
 
         expect(queryString).to.equal('');
@@ -41,6 +42,7 @@ describe('formatQuery', function() {
     });
 
     it('ignores null or undefined propery values', function() {
+        // eslint-disable-next-line no-undefined
         var queryString = urllib.formatQuery({param1: undefined, param2: null, param3: 'hello'});
 
         expect(queryString).to.equal('param3=hello');
