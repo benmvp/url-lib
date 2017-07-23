@@ -1,13 +1,19 @@
 # url-lib
 
-[![version](https://img.shields.io/npm/v/url-lib.svg?style=flat-square)](http://npm.im/url-lib)
+[![version](https://img.shields.io/npm/v/url-lib.svg)](http://npm.im/url-lib)
+[![downloads](https://img.shields.io/npm/dt/url-lib.svg)](http://npm-stat.com/charts.html?package=url-lib&from=2016-03-27)
+![module formats: umds](https://img.shields.io/badge/module%20formats-umd-green.svg)
+[![license](https://img.shields.io/npm/l/url-lib.svg)](http://spdx.org/licenses/MIT)
+
+[![Maintenance Status](https://img.shields.io/badge/status-maintained-brightgreen.svg)](https://github.com/benmvp/url-lib/pulse)
 [![Build Status](https://travis-ci.org/benmvp/url-lib.svg?branch=master)](https://travis-ci.org/benmvp/url-lib)
 [![Coverage Status](https://coveralls.io/repos/github/benmvp/url-lib/badge.svg?branch=master)](https://coveralls.io/github/benmvp/url-lib?branch=master)
-[![Dependencies status](https://img.shields.io/david/benmvp/url-lib.svg?style=flat-square)](https://david-dm.org/benmvp/url-lib#info=dependencies)
-[![Dev Dependencies status](https://img.shields.io/david/dev/benmvp/url-lib.svg?style=flat-square)](https://david-dm.org/benmvp/url-lib#info=devDependencies)
-[![downloads](https://img.shields.io/npm/dt/url-lib.svg?style=flat-square)](http://npm-stat.com/charts.html?package=url-lib&from=2016-03-27)
-[![Maintenance Status](https://img.shields.io/badge/status-maintained-brightgreen.svg)](https://github.com/benmvp/url-lib/pulse)
-[![license](https://img.shields.io/npm/l/url-lib.svg?style=flat-square)](http://spdx.org/licenses/MIT)
+[![Dependencies status](https://img.shields.io/david/benmvp/url-lib.svg)](https://david-dm.org/benmvp/url-lib#info=dependencies)
+[![Dev Dependencies status](https://img.shields.io/david/dev/benmvp/url-lib.svg)](https://david-dm.org/benmvp/url-lib#info=devDependencies)
+
+[![Watch on GitHub](https://img.shields.io/github/watchers/benmvp/url-lib.svg?style=social)](https://github.com/benmvp/url-lib/watchers)
+[![Star on GitHub](https://img.shields.io/github/stars/benmvp/url-lib.svg?style=social)](https://github.com/benmvp/url-lib/stargazers)
+[![Tweet](https://img.shields.io/twitter/url/https/github.com/benmvp/url-lib.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20url-lib!%20https://github.com/benmvp/url-lib%20%F0%9F%91%8D)
 
 A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.
 
@@ -75,7 +81,7 @@ Specifically the ES5 features in use are:
 
 ## Contributing
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+Contributions are welcome! See [CONTRIBUTING](CONTRIBUTING.md) for more details.
 
 ## Project philosophy
 
