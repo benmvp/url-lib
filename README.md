@@ -85,4 +85,4 @@ All updates must pass the [CI build](https://travis-ci.org/benmvp/url-lib) while
 
 ## License
 
-[MIT](LICENSE). Copyright (c) 2016 Ben Ilegbodu.
+[MIT](LICENSE). Copyright (c) 2016-2017 Ben Ilegbodu.
