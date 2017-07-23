@@ -13,7 +13,7 @@
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/benmvp/url-lib.svg?style=social)](https://github.com/benmvp/url-lib/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/benmvp/url-lib.svg?style=social)](https://github.com/benmvp/url-lib/stargazers)
-[![Tweet](https://img.shields.io/twitter/url/https/github.com/benmvp/url-lib.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20url-lib!%20https://github.com/benmvp/url-lib%20%F0%9F%91%8D)
+[![Tweet](https://img.shields.io/twitter/url/https/github.com/benmvp/url-lib.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20url-lib%20by%20%40benmvp!%0A%0Ahttps%3A%2F%2Fgithub.com%2Fbenmvp%2Furl-lib)
 
 A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.
 
