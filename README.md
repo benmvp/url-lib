@@ -23,6 +23,12 @@ The primary use case is for building string URLs with query parameters for the [
 
 ## Installation
 
+Install via [Yarn](https://yarnpkg.com/lang/en/docs/managing-dependencies/):
+
+```sh
+yarn add url-lib
+```
+
 Install via [NPM](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
