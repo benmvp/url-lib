@@ -17,7 +17,7 @@
 
 [![Watch on GitHub](https://img.shields.io/github/watchers/benmvp/url-lib.svg?style=social)](https://github.com/benmvp/url-lib/watchers)
 [![Star on GitHub](https://img.shields.io/github/stars/benmvp/url-lib.svg?style=social)](https://github.com/benmvp/url-lib/stargazers)
-[![Tweet](https://img.shields.io/twitter/url/https/github.com/benmvp/url-lib.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20url-lib%20by%20%40benmvp!%0A%0Ahttps%3A%2F%2Fgithub.com%2Fbenmvp%2Furl-lib)
+[![Tweet](https://img.shields.io/twitter/url/https/github.com/benmvp/url-lib.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20url-lib%20by%20%40benmvp!%0A%0Ahttps%3A%2F%2Fgithub.com%2Fbenmvp%2Furl-lib) [![Greenkeeper badge](https://badges.greenkeeper.io/benmvp/url-lib.svg)](https://greenkeeper.io/)
 
 A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.
 
