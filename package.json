@@ -2,8 +2,32 @@
   "name": "url-lib",
   "version": "2.0.2",
   "description": "A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
-  "main": "./index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "jsnext:main": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "files": ["lib/"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benmvp/url-lib.git"
+  },
+  "keywords": [
+    "url",
+    "serialization",
+    "parse",
+    "query",
+    "query+string",
+    "format",
+    "fetch"
+  ],
+  "author": "Ben Ilegbodu <ben@benmvp.com> (http://www.benmvp.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benmvp/url-lib/issues"
+  },
+  "homepage": "https://github.com/benmvp/url-lib#readme",
   "scripts": {
+    "start": "benmvp start",
     "build": "npm run gzip",
     "dist": "npm run dist:core && npm run dist:all",
     "dist:all": "mkdir -p dist && cat index.js getCacheDefeatStr.js parseUrl.js > dist/url-lib.js",
@@ -28,26 +52,8 @@
     "release:minor": "npm version minor --message 'Minor release v%s' && npm publish",
     "release:major": "npm version major --message 'Major release v%s' && npm publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/benmvp/url-lib.git"
-  },
-  "keywords": [
-    "url",
-    "serialization",
-    "parse",
-    "query",
-    "query+string",
-    "format",
-    "fetch"
-  ],
-  "author": "Ben Ilegbodu <ben@benmvp.com> (http://www.benmvp.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/benmvp/url-lib/issues"
-  },
-  "homepage": "https://github.com/benmvp/url-lib#readme",
   "devDependencies": {
+    "@benmvp/cli": "^1.1.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
     "eslint": "^2.4.0",
@@ -58,7 +64,7 @@
     "uglify-js": "^2.6.2"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">= 8"
   },
   "pre-commit": [
     "validate"
