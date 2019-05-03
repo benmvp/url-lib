@@ -28,45 +28,13 @@
   "homepage": "https://github.com/benmvp/url-lib#readme",
   "scripts": {
     "start": "benmvp start",
-    "build": "npm run gzip",
-    "dist": "npm run dist:core && npm run dist:all",
-    "dist:all": "mkdir -p dist && cat index.js getCacheDefeatStr.js parseUrl.js > dist/url-lib.js",
-    "dist:core": "mkdir -p dist && cp index.js dist/url-lib-core.js",
-    "gzip": "npm run gzip:core && npm run gzip:all",
-    "gzip:all": "npm run minify:all && gzip -c dist/url-lib.min.js > dist/url-lib.min.js.gz",
-    "gzip:core": "npm run minify:core && gzip -c dist/url-lib-core.min.js > dist/url-lib-core.min.js.gz",
-    "minify": "npm run minify:core && npm run minify:all",
-    "minify:all": "npm run dist:all && uglifyjs --compress --mangle --output dist/url-lib.min.js dist/url-lib.js",
-    "minify:core": "npm run dist:core && uglifyjs --compress --mangle --comments --output dist/url-lib-core.min.js dist/url-lib-core.js",
-    "lint": "eslint .",
-    "test": "mocha tests/*.js",
-    "test:watch": "mocha -w tests/*.js",
-    "test-coverage": "istanbul cover _mocha -- -R spec tests/*.js",
-    "test-coverage:ci": "istanbul cover _mocha --report lcovonly -- -R spec tests/*.js",
-    "validate": "npm run lint && npm run test",
-    "validate:ci": "npm run lint && npm run test-coverage:ci",
-    "preversion": "npm run validate",
-    "version": "npm run build && git add -A dist",
-    "postversion": "git push && git push --tags",
-    "release:patch": "npm version patch --message 'Patch release v%s' && npm publish",
-    "release:minor": "npm version minor --message 'Minor release v%s' && npm publish",
-    "release:major": "npm version major --message 'Major release v%s' && npm publish"
+    "test": "benmvp test",
+    "build": "benmvp build"
   },
   "devDependencies": {
-    "@benmvp/cli": "^1.1.0",
-    "chai": "^3.5.0",
-    "coveralls": "^2.11.9",
-    "eslint": "^2.4.0",
-    "eslint-config-benmvp": "^4.0.1",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.4.5",
-    "pre-commit": "^1.1.2",
-    "uglify-js": "^2.6.2"
+    "@benmvp/cli": "^1.1.0"
   },
   "engines": {
     "node": ">= 8"
-  },
-  "pre-commit": [
-    "validate"
-  ]
+  }
 }

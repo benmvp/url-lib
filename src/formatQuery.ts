@@ -1,21 +1,17 @@
 // Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
-type UrlParamValue = string | number | boolean | object | null | undefined
 
-interface UrlParams {
-  [key: string]: UrlParamValue
-}
+import {encode} from './utils'
+import {UrlParams} from './types'
 
 const IMMUTABLE_EMPTY_OBJECT = {}
 
-// const _decode = (str: string): string => str != null ? decodeURIComponent(str) : ''
-const _encode = (str: UrlParamValue): string => encodeURIComponent(`${str}`)
 
 /**
  * Serializes the properties of a params object to produce a URL query string.
  * @param {UrlParams | UrlParams[]} [urlParams] - An object (or array of objects) representing the query
  * @returns {string} Serialized query string
  */
-const formatQuery = (urlParams: UrlParams | UrlParams[] | null | undefined): string => {
+const formatQuery = (urlParams?: UrlParams | UrlParams[] | null): string => {
   let paramsObj = urlParams
 
   if (Array.isArray(paramsObj)) {
@@ -35,7 +31,7 @@ const formatQuery = (urlParams: UrlParams | UrlParams[] | null | undefined): str
         paramValue = normalizedParams[paramName]
 
         if (paramValue != null) {
-          urlParamPairs.push(`${_encode(paramName)}=${_encode(paramValue)}`)
+          urlParamPairs.push(`${encode(paramName)}=${encode(paramValue)}`)
         }
       }
 
