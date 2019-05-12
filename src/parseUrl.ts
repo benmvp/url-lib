@@ -2,8 +2,8 @@
 
 type UrlSegment = 'href' | 'fullDomain' | 'protocol' | 'host' | 'hostname' | '' | 'port' | 'pathname' | 'folderPath' | 'file' | 'fileName' | 'extension' | 'fileType' | 'search' | 'query' | 'hash' | 'anchor'
 
-interface ParsedUrl {
-  [key: Segment]: string
+type ParsedUrl = {
+  [US in UrlSegment]: string
 }
 
 // eslint-disable-next-line no-useless-escape
@@ -32,10 +32,10 @@ const URL_SEGMENTS = [
 
 /**
 * Parses the specified URL string into an object containing properties for the various logical segments.
-* @param {string | undefined | null} [url] URL to parse
+* @param {string | null} [url] URL to parse
 * @returns {ParsedUrl} Parsed URL as url segments object
 */
-const parseUrl = (url: string | undefined | null): ParsedUrl => {
+const parseUrl = (url?: string | null): ParsedUrl => {
   const urlSegmentsMatch = url && url.match(URL_REG_EXP)
 
   const getUrlSegment = (segmentNo: number): string => (

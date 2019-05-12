@@ -1,8 +1,8 @@
 import {UrlParamValue} from './types'
 
 interface SplitQuery {
-  urlPath: string
-  queryString: string
+  urlPath: string;
+  queryString: string;
 }
 
 export const splitOnQuery = (url = '', favorQuery = false): SplitQuery => {

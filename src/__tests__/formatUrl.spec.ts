@@ -180,7 +180,8 @@ describe('formatUrl', () => {
       'http://www.benmvp.com',
       {param1Name: 'param1Value'},
       null,
-      {param3Name: 'param3Value'}])
+      {param3Name: 'param3Value'},
+    ])
 
     expect(url).toEqual('http://www.benmvp.com?param1Name=param1Value&param3Name=param3Value')
   })

@@ -1,17 +1,17 @@
 // Adapted from the Uize.Url module, a part of the UIZE JavaScript Framework.
 
 import {encode} from './utils'
-import {UrlParams} from './types'
+import {NullableUrlParams} from './types'
 
-const IMMUTABLE_EMPTY_OBJECT = {}
+const IMMUTABLE_EMPTY_OBJECT: NullableUrlParams = {}
 
 
 /**
  * Serializes the properties of a params object to produce a URL query string.
- * @param {UrlParams | UrlParams[]} [urlParams] - An object (or array of objects) representing the query
+ * @param {NullableUrlParams | NullableUrlParams[]} [urlParams] - An object (or array of objects) representing the query
  * @returns {string} Serialized query string
  */
-const formatQuery = (urlParams?: UrlParams | UrlParams[] | null): string => {
+const formatQuery = (urlParams?: NullableUrlParams | NullableUrlParams[]): string => {
   let paramsObj = urlParams
 
   if (Array.isArray(paramsObj)) {
@@ -20,7 +20,7 @@ const formatQuery = (urlParams?: UrlParams | UrlParams[] | null): string => {
       : Object.assign({}, ...paramsObj)
   }
 
-  const normalizedParams = paramsObj as UrlParams || IMMUTABLE_EMPTY_OBJECT as UrlParams
+  const normalizedParams = paramsObj as NullableUrlParams || IMMUTABLE_EMPTY_OBJECT
 
   return Object.keys(normalizedParams)
     .reduce((prevUrlParamPairs, paramName) => {

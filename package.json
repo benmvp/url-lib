@@ -6,7 +6,9 @@
   "module": "lib/esm/index.js",
   "jsnext:main": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
-  "files": ["lib/"],
+  "files": [
+    "lib/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benmvp/url-lib.git"
@@ -32,7 +34,7 @@
     "build": "benmvp build"
   },
   "devDependencies": {
-    "@benmvp/cli": "^1.1.0"
+    "@benmvp/cli": "^2.0.0"
   },
   "engines": {
     "node": ">= 8"
