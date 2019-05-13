@@ -57,7 +57,7 @@ describe('formatQuery', () => {
     expect(queryString).toEqual('param1Name=param1Value&param2Name=param2Value&param3Name=param3Value')
   })
 
-  it('URI encodes property values', () => {
+  it('property values are URI encoded', () => {
     const queryString = formatQuery({
       param1: '`@#$%^&+=[]{}|\\:;"<>,?/ ',
       param2: 'hello',
@@ -66,7 +66,7 @@ describe('formatQuery', () => {
     expect(queryString).toEqual('param1=%60%40%23%24%25%5E%26%2B%3D%5B%5D%7B%7D%7C%5C%3A%3B%22%3C%3E%2C%3F%2F%20&param2=hello')
   })
 
-  it('URI encodes property keys', () => {
+  it('property keys are URI encoded', () => {
     const queryString = formatQuery({'`@#$%^&+=[]{}|\\:;"<>,?/ ': 'hello'})
 
     expect(queryString).toEqual('%60%40%23%24%25%5E%26%2B%3D%5B%5D%7B%7D%7C%5C%3A%3B%22%3C%3E%2C%3F%2F%20=hello')
