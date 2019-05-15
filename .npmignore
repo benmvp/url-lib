@@ -1,5 +1,1 @@
-/.*/
-/.*
-/coverage/
-/docs/
-/tests/
+**/__tests__/*

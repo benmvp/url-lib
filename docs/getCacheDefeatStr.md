@@ -1,19 +1,18 @@
 # `getCacheDefeatStr`
 
-Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
+Returns a random string value that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
 
 ## Syntax
 
-`string = getCacheDefeatStr()`
+`getCacheDefeatStr(): string`
 
 ## Example
 
 ```js
-var urllib = require('url-lib'),
-    getCacheDefeatStr = require('url-lib/getCacheDefeatStr');
+import {formatUrl, getCacheDefeatStr} from 'url-lib';
 
-var url = urllib.formatUrl(
-    'http://www.foo.com',
+const url = formatUrl(
+    'http://www.github.com/search',
     {
         q: 'benmvp',
         r: getCacheDefeatStr()
@@ -23,4 +22,4 @@ var url = urllib.formatUrl(
 
 ## Notes
 
-- `getCacheDefeatStr` is provided in a separate add-on module (`url-lib/getCacheDefeatStr'`)
+_None_

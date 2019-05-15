@@ -5,13 +5,13 @@
 Serializes the properties of a params object to produce a URL query string.
 
 ```js
-var urllib = require('url-lib');
+import {formatQuery} from 'url-lib'
 
-var queryString = urllib.formatQuery({
+const queryString = formatQuery({
     category: 'holiday',
     type: 'all',
-    results: '20'
-});
+    results: '20',
+})
 ```
 
 With the above code, `queryString` will be `'category=holiday&type=all&results=20'`.
@@ -25,12 +25,12 @@ Read full documentation for [`formatQuery`](formatQuery.md).
 Serializes the specified URL path with properties of a params object to produce a URL.
 
 ```js
-var urllib = require('url-lib');
+import {formatUrl} from 'url-lib'
 
-var url = urllib.formatUrl('http://www.benmvp.com/search', {
+const url = formatUrl('http://www.benmvp.com/search', {
     category: 'holiday',
     type: 'all',
-    results: 20
+    results: 20,
 });
 ```
 
@@ -45,15 +45,14 @@ Read full documentation for [`formatUrl`](formatUrl.md).
 Returns a string value (generated using the time and a random number) that can be used as a query parameter value to cause a URL to be unique in order to defeat caching.
 
 ```js
-var urllib = require('url-lib'),
-    getCacheDefeatStr = require('url-lib/getCacheDefeatStr');
+import {formatUrl, getCacheDefeatStr} from 'url-lib'
 
-var url = urllib.formatUrl(
-    'http://www.foo.com',
+const url = formatUrl(
+    'http://www.github.com/search',
     {
         q: 'benmvp',
-        r: getCacheDefeatStr()
-    }
+        r: getCacheDefeatStr(),
+    },
 )
 ```
 
@@ -66,9 +65,9 @@ Read full documentation for [`getCacheDefeatStr`](getCacheDefeatStr.md).
 Parses query parameters from a string, returning the query parameters as an object.
 
 ```js
-var urllib = require('url-lib');
+import {parseQuery} from 'url-lib'
 
-var paramsObj = urllib.parseQuery('category=holiday&type=all&results=20');
+const paramsObj = parseQuery('category=holiday&type=all&results=20')
 ```
 
 With the above code, `paramsObj` will be the following object:
@@ -77,7 +76,7 @@ With the above code, `paramsObj` will be the following object:
 {
     category: 'holiday',
     type: 'all',
-    results: '20'
+    results: '20',
 }
 ```
 
@@ -90,9 +89,9 @@ Read full documentation for [`parseQuery`](parseQuery.md).
 Parses the specified URL string into an object containing properties for the various logical segments.
 
 ```js
-var parseUrl = require('url-lib/parseUrl');
+import {parseUrl} from 'url-lib'
 
-var parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor');
+const parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor')
 ```
 
 With the above code, `parsedUrl` would be the following object:
@@ -114,7 +113,7 @@ With the above code, `parsedUrl` would be the following object:
     search: '?param=value',
     query: 'param=value',
     hash: '#anchor',
-    anchor: 'anchor'
+    anchor: 'anchor',
 }
 ```
 

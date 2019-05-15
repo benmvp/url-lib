@@ -1,18 +1,20 @@
 language: node_js
 node_js:
-  - "node"
-  - "5"
-  - "5.1"
-  - "4"
-  - "4.2"
-  - "4.1"
-  - "4.0"
-  - "0.12"
-  - "0.10"
-  - "iojs"
+  - 'node'
+  - '10'
+  - '8'
+cache: yarn
 
-# Run the the eslint + test + coverage
-script: "npm run-script validate:ci"
+script: yarn test
 
-# Send coverage data to Coveralls
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+jobs:
+  include:
+    - stage: NPM Release
+      node_js: '10'
+      script: yarn build
+
+      # Using semantic-release, deploy a new version of the library
+      deploy:
+        skip_cleanup: true
+        provider: script
+        script: npx semantic-release

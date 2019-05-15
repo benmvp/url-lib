@@ -6,14 +6,14 @@ Parses the specified URL string into an object containing properties for the var
 
 ## Syntax
 
-`object = parseUrl(url: string)`
+`parseUrl(url: string): object`
 
 ## Example
 
 ```js
-var parseUrl = require('url-lib/parseUrl');
+import {parseUrl} from 'url-lib'
 
-var parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor');
+const parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor');
 ```
 
 With the above code, `parsedUrl` would be the following object:
@@ -96,32 +96,31 @@ href
 A URL string can be reconstructed from the object returned by `parseUrl` in one of the following ways:
 
 ```js
-var parseUrl = require('url-lib/parseUrl');
+import {parseUrl} from 'url-lib'
 
-var parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor');
+const parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor')
 
-var urlA = parsedUrl.fullDomain
+const urlA = parsedUrl.fullDomain
     + parsedUrl.pathname
     + parsedUrl.search
-    + parsedUrl.hash;
+    + parsedUrl.hash
 
-var urlB = parsedUrl.fullDomain
+const urlB = parsedUrl.fullDomain
     + parsedUrl.folderPath
     + parsedUrl.file
     + parsedUrl.search
-    + parsedUrl.hash;
+    + parsedUrl.hash
 
-var urlC = parsedUrl.fullDomain
+const urlC = parsedUrl.fullDomain
     + parsedUrl.folderPath
     + parsedUrl.fileName
     + parsedUrl.extension
     + parsedUrl.search
-    + parsedUrl.hash;
+    + parsedUrl.hash
 ```
 
 If instead you choose to reconstruct a URL string using any of the more granular URL segment properties, such as `protocol`, `hostname`, `port`, `fileType`, `query`, etc., you will have to use logic to conditionally include the delimiters `//,` `:,` `.,` `?,` and `#.`
 
 ## Notes
 
-- `parseUrl` is provided in a separate add-on module (`url-lib/parseUrl'`)
 - See also the related [`parseQuery`](parseQuery.md)
