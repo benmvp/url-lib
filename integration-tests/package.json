@@ -1,6 +1,4 @@
 {
   "private": true,
-  "devDependencies": {
-    "@benmvp/cli": "^4.0.0"
-  }
+  "devDependencies": {}
 }
