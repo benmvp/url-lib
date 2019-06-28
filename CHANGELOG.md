@@ -2,7 +2,7 @@
 
 ## v3 (and higher)
 
-The changelog is automatically updated using [`semantic-release`](https://github.com/semantic-release/semantic-release)! You can view all changes on the [releases page](https://github.com/benmvp/benmvp-cli/releases).
+The changelog is automatically updated using [`semantic-release`](https://github.com/semantic-release/semantic-release)! You can view all changes on the [releases page](https://github.com/benmvp/url-lib/releases).
 
 ## v2.0.2 (May 24, 2016)
 - [patch] `dist/` folder now includes unminified files

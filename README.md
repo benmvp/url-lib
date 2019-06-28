@@ -61,7 +61,7 @@ const url = formatUrl('http://www.benmvp.com/search?sort=recent&results=20&pg=1'
 
 With the above code, `url` will be `'http://www.benmvp.com/search?sort=popular&results=100&pg=1&category=holiday&type=all'`
 
-Check out the [docs](docs/) for more usage examples or [try out `url-lib` in your browser!](https://tonicdev.com/npm/url-lib)
+Check out the [docs](docs/) for more usage examples or [try out `url-lib` in your browser!](https://runkit.com/npm/url-lib)
 
 ## API Docs
 
