@@ -13,12 +13,11 @@ Thank you for your interest in contributing to `url-lib`!
 
 ## Setup
 
-1. This project uses [yarn](https://yarnpkg.com/en/) as a package management system. If you don't have it installed, you can follow the [installation instructions](https://yarnpkg.com/lang/en/docs/install/)
 1. [For the repository](https://help.github.com/articles/fork-a-repo/)
 1. Clone your new forked repository to your local computer
 1. Set the `benmvp` repository as your branch's upstream branch: `git remote add upstream https://github.com/benmvp/url-lib.git`
 1. Navigate to the root directory of your newly cloned repository: `cd /path/to/url-lib`
-1. `yarn install` to install local dependencies
+1. `npm install` to install local dependencies
 
 ## Using branches to submit changes
 
@@ -60,6 +59,6 @@ Please try to conform to the coding style of the code base.
 
 1. Please ensure that your changes are fully covered by one or more unit test(s).
 1. Check to make sure that your changes are documented properly (inline comments for interesting lines, READMEs, etc.)
-1. Run `yarn test` to ensure that all tests pass, the linter is satisfied and your changes are typescript compliant.
+1. Run `npm test` to ensure that all tests pass, the linter is satisfied and your changes are typescript compliant.
 1. PR titles must be prefixed by the type of changes the PR contains followed by the scope of what the PR touches. We are following the [angular commit guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines). Please use one of `feat, fix, docs, style, refactor, perf, test, chore` as the prefix. The " is the the direct product your changes affect. Example: `chore(build): Add encrypted ssh key for semantic-release` because its a chore and it touches the build. For multiple scope items, you can comma separate 2 or 3 but if there are more than that please use a `*` instead.
 1.  Please use a [closing issue keyword](https://help.github.com/articles/closing-issues-using-keywords/) to indicate the issue that your fix addresses in the description section of the pull request template. Example: `fixes #32` to close issue #32

@@ -132,6 +132,8 @@ const url = formatUrl([
 
 This variation is powerful in that it allows us to write functions that can accept a single URL parameter, where that parameter's value may be a string, **or** an array containing a string path and params objects. A single call to `formatUrl` will format it to a string for the benefit of your functions' implementation code.
 
+`url` will be `'http://www.benmvp.com/search?sort=popular&type=all&results=20&category=holiday'`
+
 ### Miscellaneous variations
 
 When using the `urlPathAndQueryParamsList` parameter, you can still specify the `queryParams` second parameter to merge in further query params:
@@ -150,7 +152,7 @@ const url = formatUrl(
         category: 'holiday',
         sort: 'popular',
     },
-])
+)
 ```
 
 The above example would produce the same value for `url` as the previous examples.
@@ -171,8 +173,10 @@ const url = formatUrl(
         {category: 'holiday'},
         {sort: 'popular'},
     ],
-])
+)
 ```
+
+The above example would produce the same value for `url` as the previous examples.
 
 ### Conditional Params
 

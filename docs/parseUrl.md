@@ -13,7 +13,7 @@ Parses the specified URL string into an object containing properties for the var
 ```js
 import {parseUrl} from 'url-lib'
 
-const parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor');
+const parsedUrl = parseUrl('http://benmvp.com:80/docs/url-lib.html?param=value#anchor')
 ```
 
 With the above code, `parsedUrl` would be the following object:
@@ -35,7 +35,7 @@ With the above code, `parsedUrl` would be the following object:
     search: '?param=value',
     query: 'param=value',
     hash: '#anchor',
-    anchor: 'anchor'
+    anchor: 'anchor',
 }
 ```
 

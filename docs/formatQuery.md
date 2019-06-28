@@ -38,8 +38,8 @@ const queryString = formatQuery([
     defaultSearchSettings, 
     {
         category: 'holiday',
-        sort: 'popular'
-    }
+        sort: 'popular',
+    },
 ])
 ```
 

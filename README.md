@@ -27,16 +27,16 @@ The primary use case is for building string URLs with query parameters for the [
 
 ## Installation
 
+Install via [npm](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+
+```sh
+npm install --save url-lib
+```
+
 Install via [Yarn](https://yarnpkg.com/lang/en/docs/managing-dependencies/):
 
 ```sh
 yarn add url-lib
-```
-
-Install via [NPM](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
-
-```sh
-npm install --save url-lib
 ```
 
 Use with [Node](https://nodejs.org/en/), [webpack](https://webpack.github.io/) or [browserify](http://browserify.org/):
