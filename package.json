@@ -32,7 +32,7 @@
     "start": "benmvp start",
     "test": "benmvp test",
     "build": "benmvp build",
-    "integrate": "benmvp integrate"
+    "integrate": "benmvp build && benmvp integrate"
   },
   "devDependencies": {
     "@benmvp/cli": "^4.0.2"
