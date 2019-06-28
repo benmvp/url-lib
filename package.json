@@ -1,6 +1,6 @@
 {
   "name": "url-lib",
-  "version": "2.0.2",
+  "version": "0.0.0-semantically-released",
   "description": "A simple, lightweight string utility for Node and browsers that supports serializing and parsing URLs and query strings.",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
@@ -31,10 +31,11 @@
   "scripts": {
     "start": "benmvp start",
     "test": "benmvp test",
-    "build": "benmvp build"
+    "build": "benmvp build",
+    "integrate": "benmvp integrate"
   },
   "devDependencies": {
-    "@benmvp/cli": "^2.0.0"
+    "@benmvp/cli": "^4.0.0"
   },
   "engines": {
     "node": ">= 8"

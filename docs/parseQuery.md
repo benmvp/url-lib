@@ -4,7 +4,7 @@ Parses query parameters from a string, returning the query parameters as an obje
 
 ## Syntax
 
-`oparseQuery(strToParse: string): object`
+`parseQuery(strToParse: string): object`
 
 `parseQuery` assumes that the query string within `strToParse` was serialized using `&` to separate parameters, and `=` to separate parameter names from values in each name/value pair.
 
@@ -33,7 +33,7 @@ Therefore, the following code will have the same result as the above example:
 ```js
 import {parseQuery} from 'url-lib'
 
-var paramsObj = parseQuery('http://www.somedomain.com/search?category=holiday&type=all&results=20')
+const paramsObj = parseQuery('http://www.somedomain.com/search?category=holiday&type=all&results=20')
 ```
 
 ## Notes
