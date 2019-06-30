@@ -35,7 +35,7 @@
     "integrate": "benmvp integrate"
   },
   "devDependencies": {
-    "@benmvp/cli": "^4.0.3"
+    "@benmvp/cli": "^4.0.4"
   },
   "engines": {
     "node": ">= 8"
