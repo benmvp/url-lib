@@ -4,6 +4,7 @@ import {
   getCacheDefeatStr,
   parseQuery,
   parseUrl,
+  UrlParams,
 } from 'url-lib'
 
 describe('formatQuery', () => {
@@ -148,6 +149,25 @@ describe('formatUrl', () => {
     )
 
     expect(url).toEqual('http://www.benmvp.com/search?sort=popular&type=all&results=20&category=holiday')
+  })
+
+  it('properly types function wrappers', () => {
+    const API_BASE = 'http://api.benmvp.com'
+    const buildUrl = (apiName: string, command: string, params: UrlParams): string => {
+      const apiUrl = formatUrl(`${API_BASE}/${apiName}`, [
+        {
+          cmd: command,
+          key: 'MW9S-E7SL-26DU-VV8V',
+        },
+        params,
+      ])
+
+      return apiUrl
+    }
+
+    expect(
+      buildUrl('events', 'get', {q: 'javascript', pg: 2})
+    ).toEqual('http://api.benmvp.com/events?cmd=get&key=MW9S-E7SL-26DU-VV8V&q=javascript&pg=2')
   })
 })
 
