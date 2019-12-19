@@ -7,7 +7,7 @@
 [![license](https://img.shields.io/npm/l/url-lib.svg)](http://spdx.org/licenses/MIT)
 
 [![Maintenance Status](https://img.shields.io/badge/status-maintained-brightgreen.svg)](https://github.com/benmvp/url-lib/pulse)
-[![Build Status](https://travis-ci.org/benmvp/url-lib.svg?branch=master)](https://travis-ci.org/benmvp/url-lib)
+[![Build Status](https://github.com/benmvp/url-lib/workflows/CI/badge.svg)](https://github.com/benmvp/url-lib/actions)
 [![Tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![Coverage Status](https://coveralls.io/repos/github/benmvp/url-lib/badge.svg?branch=master)](https://coveralls.io/github/benmvp/url-lib?branch=master)
 [![Dependencies status](https://img.shields.io/david/benmvp/url-lib.svg)](https://david-dm.org/benmvp/url-lib#info=dependencies)
@@ -42,21 +42,24 @@ yarn add url-lib
 Use with [Node](https://nodejs.org/en/), [webpack](https://webpack.github.io/) or [browserify](http://browserify.org/):
 
 ```js
-import * as urllib from 'url-lib'; // ES6+
-var urllib = require('url-lib'); // ES5-
+import * as urllib from 'url-lib' // ES6+
+var urllib = require('url-lib') // ES5-
 ```
 
 ## Usage
 
 ```js
-import {formatUrl} from 'url-lib'
+import { formatUrl } from 'url-lib'
 
-const url = formatUrl('http://www.benmvp.com/search?sort=recent&results=20&pg=1', {
-    sort: 'popular',        // overwrites existing `sort` param in URL
+const url = formatUrl(
+  'http://www.benmvp.com/search?sort=recent&results=20&pg=1',
+  {
+    sort: 'popular', // overwrites existing `sort` param in URL
     category: 'holiday',
     type: 'all',
-    results: 100,            // overwrites existing `results` param in URL
-})
+    results: 100, // overwrites existing `results` param in URL
+  },
+)
 ```
 
 With the above code, `url` will be `'http://www.benmvp.com/search?sort=popular&results=100&pg=1&category=holiday&type=all'`
@@ -79,7 +82,7 @@ Contributions are welcome! See [CONTRIBUTING](CONTRIBUTING.md) for more details.
 
 We take the stability of this utility package **very** seriously. `url-lib` follows the [SemVer](http://semver.org/) standard for versioning.
 
-All updates must pass the [CI build](https://travis-ci.org/benmvp/url-lib) while maintaining [100% code coverage](https://coveralls.io/github/benmvp/url-lib).
+All updates must pass the [CI build](https://github.com/benmvp/url-lib/actions) while maintaining [100% code coverage](https://coveralls.io/github/benmvp/url-lib).
 
 ## License
 

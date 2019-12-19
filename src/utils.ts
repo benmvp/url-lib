@@ -1,8 +1,8 @@
-import {UrlParamValue} from './types'
+import { UrlParamValue } from './types'
 
 interface SplitQuery {
-  urlPath: string;
-  queryString: string;
+  urlPath: string
+  queryString: string
 }
 
 export const splitOnQuery = (url = '', favorQuery = false): SplitQuery => {
@@ -23,6 +23,8 @@ export const splitOnQuery = (url = '', favorQuery = false): SplitQuery => {
   }
 }
 
-export const encode = (str: UrlParamValue): string => encodeURIComponent(`${str}`)
+export const encode = (str: UrlParamValue): string =>
+  encodeURIComponent(`${str}`)
 
-export const decode = (str: string): string => str != null ? decodeURIComponent(str) : ''
+export const decode = (str: string): string =>
+  str != null ? decodeURIComponent(str) : ''

@@ -9,15 +9,12 @@ Returns a random string value that can be used as a query parameter value to cau
 ## Example
 
 ```js
-import {formatUrl, getCacheDefeatStr} from 'url-lib';
+import { formatUrl, getCacheDefeatStr } from 'url-lib'
 
-const url = formatUrl(
-    'http://www.github.com/search',
-    {
-        q: 'benmvp',
-        r: getCacheDefeatStr()
-    }
-)
+const url = formatUrl('http://www.github.com/search', {
+  q: 'benmvp',
+  r: getCacheDefeatStr(),
+})
 ```
 
 ## Notes

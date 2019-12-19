@@ -11,7 +11,7 @@ Parses query parameters from a string, returning the query parameters as an obje
 ## Examples
 
 ```js
-import {parseQuery} from 'url-lib'
+import { parseQuery } from 'url-lib'
 
 const paramsObj = parseQuery('category=holiday&type=all&results=20')
 ```
@@ -31,9 +31,11 @@ The value of the `strToParse` parameter may contain a prepended `?` character, a
 Therefore, the following code will have the same result as the above example:
 
 ```js
-import {parseQuery} from 'url-lib'
+import { parseQuery } from 'url-lib'
 
-const paramsObj = parseQuery('http://www.somedomain.com/search?category=holiday&type=all&results=20')
+const paramsObj = parseQuery(
+  'http://www.somedomain.com/search?category=holiday&type=all&results=20',
+)
 ```
 
 ## Notes
