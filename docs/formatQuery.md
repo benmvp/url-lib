@@ -13,12 +13,12 @@ Serializes the properties of a params object to produce a URL query string.
 ## Examples
 
 ```js
-import {formatQuery} from 'url-lib'
+import { formatQuery } from 'url-lib'
 
 const queryString = formatQuery({
-    category: 'holiday',
-    type: 'all',
-    results: '20',
+  category: 'holiday',
+  type: 'all',
+  results: '20',
 })
 ```
 
@@ -27,19 +27,19 @@ With the above code, `queryString` will be `'category=holiday&type=all&results=2
 A variation of the syntax allows for the parameter passed to `formatQuery` to be an array (e.g. `queryParamsList`). This provides for an easy way to merge query param sets from multiple sources, or to blend fixed params with parameterized params (e.g. passed in a method call), or to override the values in param sets. The values from params objects later in the array override those from earlier params objects. None of the objects in the array will be modified by the operation.
 
 ```js
-import {formatQuery} from 'url-lib'
+import { formatQuery } from 'url-lib'
 
 const defaultSearchSettings = {
-    sort:'recent',
-    type:'all',
-    results:'20',
+  sort: 'recent',
+  type: 'all',
+  results: '20',
 }
 const queryString = formatQuery([
-    defaultSearchSettings, 
-    {
-        category: 'holiday',
-        sort: 'popular',
-    },
+  defaultSearchSettings,
+  {
+    category: 'holiday',
+    sort: 'popular',
+  },
 ])
 ```
 

@@ -3,11 +3,11 @@
 let cacheDefeatStrCallCount = 0
 
 /**
-* Returns a string value (generated using the time and a random number)
-* that can be used as a query parameter value to cause a URL to be
-* unique in order to defeat caching.
-* @returns {string} Cache defeat string
-*/
+ * Returns a string value (generated using the time and a random number)
+ * that can be used as a query parameter value to cause a URL to be
+ * unique in order to defeat caching.
+ * @returns {string} Cache defeat string
+ */
 const getCacheDefeatStr = (): string => {
   // Three pieces of randomness:
 

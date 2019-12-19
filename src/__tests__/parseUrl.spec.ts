@@ -117,7 +117,9 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with protocol, hostname, query & hash', () => {
-    const parsedUrl = parseUrl('http://benmvp.com/?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      'http://benmvp.com/?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
       href: 'http://benmvp.com/?param1=value&param2=value#anchor',
@@ -209,7 +211,9 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with hostname, fileName, extension, query & anchor', () => {
-    const parsedUrl = parseUrl('benmvp.com/file.html?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      'benmvp.com/file.html?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
       href: 'benmvp.com/file.html?param1=value&param2=value#anchor',
@@ -232,7 +236,9 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with hostname, folderPath, fileName, extension, query & anchor', () => {
-    const parsedUrl = parseUrl('benmvp.com/blah/blah/file.html?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      'benmvp.com/blah/blah/file.html?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
       href: 'benmvp.com/blah/blah/file.html?param1=value&param2=value#anchor',
@@ -255,10 +261,13 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with hostname, port, folderPath, fileName, extension, query & anchor', () => {
-    const parsedUrl = parseUrl('benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      'benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
-      href: 'benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor',
+      href:
+        'benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor',
       fullDomain: '',
       protocol: '',
       host: '',
@@ -278,10 +287,13 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with protocol, hostname, port, folderPath, fileName, extension & query', () => {
-    const parsedUrl = parseUrl('http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value')
+    const parsedUrl = parseUrl(
+      'http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value',
+    )
 
     expect(parsedUrl).toEqual({
-      href: 'http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value',
+      href:
+        'http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value',
       fullDomain: 'http://benmvp.com:80',
       protocol: 'http:',
       host: 'benmvp.com:80',
@@ -301,7 +313,9 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with protocol, hostname, port, folderPath, fileName, extension & anchor', () => {
-    const parsedUrl = parseUrl('http://benmvp.com:80/blah/blah/file.html#anchor')
+    const parsedUrl = parseUrl(
+      'http://benmvp.com:80/blah/blah/file.html#anchor',
+    )
 
     expect(parsedUrl).toEqual({
       href: 'http://benmvp.com:80/blah/blah/file.html#anchor',
@@ -324,10 +338,13 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with protocol, hostname, port, folderPath, fileName, extension, query & anchor', () => {
-    const parsedUrl = parseUrl('http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      'http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
-      href: 'http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor',
+      href:
+        'http://benmvp.com:80/blah/blah/file.html?param1=value&param2=value#anchor',
       fullDomain: 'http://benmvp.com:80',
       protocol: 'http:',
       host: 'benmvp.com:80',
@@ -508,7 +525,9 @@ describe('parseUrl', () => {
   })
 
   it('correctly parses a URL with absolute folderPath, fileName, extension, query & anchor', () => {
-    const parsedUrl = parseUrl('/blah/blah/file.html?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      '/blah/blah/file.html?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
       href: '/blah/blah/file.html?param1=value&param2=value#anchor',
@@ -876,7 +895,9 @@ describe('parseUrl', () => {
   })
 
   it('incorrectly parses a URL with hostname, port, query & anchor as a folderPath', () => {
-    const parsedUrl = parseUrl('benmvp.com:80/?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      'benmvp.com:80/?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
       href: 'benmvp.com:80/?param1=value&param2=value#anchor',
@@ -968,10 +989,13 @@ describe('parseUrl', () => {
   })
 
   it('supports backlashes', () => {
-    const parsedUrl = parseUrl('benmvp.com:80\\blah\\blah\\file.html?param1=value&param2=value#anchor')
+    const parsedUrl = parseUrl(
+      'benmvp.com:80\\blah\\blah\\file.html?param1=value&param2=value#anchor',
+    )
 
     expect(parsedUrl).toEqual({
-      href: 'benmvp.com:80\\blah\\blah\\file.html?param1=value&param2=value#anchor',
+      href:
+        'benmvp.com:80\\blah\\blah\\file.html?param1=value&param2=value#anchor',
       fullDomain: '',
       protocol: '',
       host: '',

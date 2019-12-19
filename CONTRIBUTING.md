@@ -4,12 +4,12 @@ Thank you for your interest in contributing to `url-lib`!
 
 ## Table of Contents
 
-* [Setup](#setup)
-* [Branches](#using-branches-to-submit-changes)
-* [Keeping up to date](#keeping-your-local-repo-up-to-date)
-* [Creating issues](#creating-issues)
-* [Working on and submitting changes](#working-on-and-submitting-changes)
-* [Steps to submit](#steps-to-submit)
+- [Setup](#setup)
+- [Branches](#using-branches-to-submit-changes)
+- [Keeping up to date](#keeping-your-local-repo-up-to-date)
+- [Creating issues](#creating-issues)
+- [Working on and submitting changes](#working-on-and-submitting-changes)
+- [Steps to submit](#steps-to-submit)
 
 ## Setup
 
@@ -61,4 +61,4 @@ Please try to conform to the coding style of the code base.
 1. Check to make sure that your changes are documented properly (inline comments for interesting lines, READMEs, etc.)
 1. Run `npm test` to ensure that all tests pass, the linter is satisfied and your changes are typescript compliant.
 1. PR titles must be prefixed by the type of changes the PR contains followed by the scope of what the PR touches. We are following the [angular commit guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines). Please use one of `feat, fix, docs, style, refactor, perf, test, chore` as the prefix. The " is the the direct product your changes affect. Example: `chore(build): Add encrypted ssh key for semantic-release` because its a chore and it touches the build. For multiple scope items, you can comma separate 2 or 3 but if there are more than that please use a `*` instead.
-1.  Please use a [closing issue keyword](https://help.github.com/articles/closing-issues-using-keywords/) to indicate the issue that your fix addresses in the description section of the pull request template. Example: `fixes #32` to close issue #32
+1. Please use a [closing issue keyword](https://help.github.com/articles/closing-issues-using-keywords/) to indicate the issue that your fix addresses in the description section of the pull request template. Example: `fixes #32` to close issue #32
