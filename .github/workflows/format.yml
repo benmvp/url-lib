@@ -1,0 +1,50 @@
+name: Format files
+
+on:
+  push:
+    branches-ignore:
+      # don't format files on push to master because pushing
+      # to master triggers version releases and we don't want
+      # to trigger a re-release just for formatting. We'll wait
+      # until the next PR to fix the formatting issues
+      - master
+
+jobs:
+  prettier:
+    name: Format files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v1
+
+      - name: Use Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: Format files
+        run: npx prettier --write "**/*.*"
+
+      - name: Show git working tree
+        run: git status
+
+      - name: Commit formatted files on branch
+        run: |
+          git config --local user.email "ben@benmvp.com"
+          git config --local user.name "Automated Formatter"
+          git add -A
+          # Do nothing if there are no changes
+          git diff-index --quiet HEAD || git commit -m "Automated format of files"
+
+      - name: Push data to repo
+        uses: ad-m/github-push-action@v0.5.0
+        with:
+          branch: ${{ github.ref }}
+
+          # Need to use special repo-scoped token so that when
+          # the push happens, it triggers CI again
+          github_token: ${{ secrets.REPO_SCOPED_TOKEN }}

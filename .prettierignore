@@ -1,0 +1,13 @@
+# Ignore dotfiles
+**/.*
+
+# Ignore other extensions prettier doesn't know about
+**/*.sh
+**/*.log
+
+# Ignore NPM files
+**/package.json
+**/package-lock.json
+
+# Ignore all built files
+lib/**/*.*
