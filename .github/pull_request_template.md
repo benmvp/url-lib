@@ -1,15 +1,15 @@
 ## Problem
 
-_State the problem the PR is aiming to solve_
+<!-- State the problem the PR is aiming to solve -->
 
 
 ## Solution
 
-_Outline the solution to the problem_
+<!--
+Outline the solution to the problem.
 
-Fixes #.
+If this fixes an existing issue include:
 
+Fixes #<ISSUE_NUM>.
+-->
 
-## Screenshots
-
-_Embed any screenshots of the new UI_
