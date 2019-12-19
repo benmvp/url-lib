@@ -18,9 +18,9 @@ const getCacheDefeatStr = (): string => {
   const randomNum = Math.round(Math.random() * 1000)
 
   // continuously incrementing counter
-  const counter = cacheDefeatStrCallCount++
+  cacheDefeatStrCallCount += 1
 
-  return `${timestamp}${randomNum}${counter}`
+  return `${timestamp}${randomNum}${cacheDefeatStrCallCount}`
 }
 
 export default getCacheDefeatStr

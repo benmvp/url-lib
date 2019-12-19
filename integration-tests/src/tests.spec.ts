@@ -196,7 +196,7 @@ describe('getCacheDefeatStr', () => {
     const resultsSet = new Set()
     const iterations = 10
 
-    for (let callNo = 0; callNo < iterations; callNo++) {
+    for (let callNo = 0; callNo < iterations; callNo += 1) {
       resultsSet.add(getCacheDefeatStr())
     }
 
