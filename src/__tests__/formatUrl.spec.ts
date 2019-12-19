@@ -35,7 +35,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles passing an empty URL, but with a query params object', () => {
+  it('handles passing an empty URL, but with a query params object', () => {
     const url = formatUrl('', {
       param1Name: 'param1Value',
       param2Name: 'param2Value',
@@ -47,7 +47,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles passing an non-empty URL (without query string) with a query params object', () => {
+  it('handles passing an non-empty URL (without query string) with a query params object', () => {
     const url = formatUrl('http://www.benmvp.com/search', {
       category: 'holiday',
       type: 'all',
@@ -59,7 +59,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles passing an non-empty URL (with `?`) and a query params object', () => {
+  it('handles passing an non-empty URL (with `?`) and a query params object', () => {
     const url = formatUrl('http://www.benmvp.com/search?', {
       category: 'holiday',
       type: 'all',
@@ -71,7 +71,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles various different types of values in params object', () => {
+  it('handles various different types of values in params object', () => {
     const url = formatUrl('http://www.benmvp.com', {
       p1: true,
       // eslint-disable-next-line no-new-wrappers
@@ -97,7 +97,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles param name & values that need to be URI encoded', () => {
+  it('handles param name & values that need to be URI encoded', () => {
     const url = formatUrl('http://www.benmvp.com', {
       param1: '`@#$%^&+=[]{}|\\:;"<>,?/ ',
       '`@#$%^&+=[]{}|\\:;"<>,?/ ': 'hello',
@@ -108,7 +108,20 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly merges query params object into a URL that already has a query string', () => {
+  it('adds properties query params object that already on URL query string', () => {
+    const url = formatUrl('http://www.benmvp.com/search?pg=1', {
+      sort: 'popular',
+      category: 'holiday',
+      type: 'all',
+      results: 100,
+    })
+
+    expect(url).toEqual(
+      'http://www.benmvp.com/search?pg=1&sort=popular&category=holiday&type=all&results=100',
+    )
+  })
+
+  it('overwrites properties in query params object that are already on URL query string', () => {
     const url = formatUrl(
       'http://www.benmvp.com/search?sort=recent&results=20&pg=1',
       {
@@ -124,7 +137,33 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly removes `null` query param values from URL', () => {
+  it('does not doubly encode param values that are already encoded (and not replaced)', () => {
+    const url = formatUrl(
+      'http://www.benmvp.com/search?sort=recent&pg=1&r=http%3A%2F%2Fwww.google.com%2F%3Fq%3Djavascript%2Burl%2Blib&results=20',
+      {
+        sort: 'popular',
+      },
+    )
+
+    expect(url).toEqual(
+      'http://www.benmvp.com/search?sort=popular&pg=1&r=http%3A%2F%2Fwww.google.com%2F%3Fq%3Djavascript%2Burl%2Blib&results=20',
+    )
+  })
+
+  it('replaces already-encoded param name using unencoded name', () => {
+    const url = formatUrl(
+      'http://www.benmvp.com/search?sort=recent&complex%2Bname=complex%25value&pg=1',
+      {
+        'complex+name': 'complex//value',
+      },
+    )
+
+    expect(url).toEqual(
+      'http://www.benmvp.com/search?sort=recent&complex%2Bname=complex%2F%2Fvalue&pg=1',
+    )
+  })
+
+  it('removes `null` query param values from URL', () => {
     const url = formatUrl(
       'http://www.benmvp.com/search?sort=recent&results=20&pg=1',
       {
@@ -138,7 +177,7 @@ describe('formatUrl', () => {
     expect(url).toEqual('http://www.benmvp.com/search?pg=1&type=all')
   })
 
-  it('correctly handles URL with an array of query params objects', () => {
+  it('handles URL with an array of query params objects', () => {
     const url = formatUrl('http://www.benmvp.com', [
       { param1Name: 'param1Value' },
       { param2Name: 'param2Value' },
@@ -150,7 +189,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly overrides in later query params objects with duplicate names', () => {
+  it('overrides in later query params objects with duplicate names', () => {
     const url = formatUrl('http://www.benmvp.com', [
       { p1: 'obj1', p2: 'obj1', p3: 'obj1' },
       { p2: 'obj2', p3: 'obj2' },
@@ -160,13 +199,13 @@ describe('formatUrl', () => {
     expect(url).toEqual('http://www.benmvp.com?p1=obj1&p2=obj2&p3=obj3')
   })
 
-  it('correctly handles an array of just a URL', () => {
+  it('handles an array of just a URL', () => {
     const url = formatUrl(['http://www.benmvp.com'])
 
     expect(url).toEqual('http://www.benmvp.com')
   })
 
-  it('correctly handles an array of a URL and multiple query params objects', () => {
+  it('handles an array of a URL and multiple query params objects', () => {
     const url = formatUrl([
       'http://www.benmvp.com',
       { param1Name: 'param1Value' },
@@ -179,7 +218,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles an array of a URL and multiple query params object plus an additional query params object', () => {
+  it('handles an array of a URL and multiple query params object plus an additional query params object', () => {
     const url = formatUrl(
       [
         'http://www.benmvp.com',
@@ -194,7 +233,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles an array of a URL and multiple query params object plus an additional array of query params objects', () => {
+  it('handles an array of a URL and multiple query params object plus an additional array of query params objects', () => {
     const url = formatUrl(
       ['http://www.benmvp.com', { param1Name: 'param1Value' }],
       [{ param2Name: 'param2Value' }, { param3Name: 'param3Value' }],
@@ -205,7 +244,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles an array of a URL and multiple query params objects (with null values)', () => {
+  it('handles an array of a URL and multiple query params objects (with null values)', () => {
     const url = formatUrl([
       'http://www.benmvp.com',
       { param1Name: 'param1Value' },
@@ -218,7 +257,7 @@ describe('formatUrl', () => {
     )
   })
 
-  it('correctly handles an array of a URL and multiple query params object plus an additional array of query params objects (with null values)', () => {
+  it('handles an array of a URL and multiple query params object plus an additional array of query params objects (with null values)', () => {
     const url = formatUrl(
       ['http://www.benmvp.com', null],
       [{ param2Name: 'param2Value' }, null],
