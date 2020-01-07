@@ -6,8 +6,8 @@ on:
       - master
 
 jobs:
-  release:
-    name: Release
+  main:
+    name: NPM Release
     runs-on: ubuntu-latest
 
     steps:

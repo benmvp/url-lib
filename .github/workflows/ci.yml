@@ -3,7 +3,7 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  test:
+  main:
     name: Test (Node ${{ matrix.node }})
     runs-on: ubuntu-latest
 

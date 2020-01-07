@@ -1,4 +1,4 @@
-name: Format files
+name: Format
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  prettier:
+  main:
     name: Format files
     runs-on: ubuntu-latest
 
