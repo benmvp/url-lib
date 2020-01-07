@@ -7,7 +7,7 @@
   "jsnext:main": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
   "files": [
-    "lib/"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -35,9 +35,12 @@
     "integrate": "benmvp integrate"
   },
   "devDependencies": {
-    "@benmvp/cli": "^6.0.0"
+    "@benmvp/cli": "^7.0.0"
   },
   "engines": {
     "node": ">= 8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

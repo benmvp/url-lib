@@ -1,6 +1,6 @@
-# Contributing to `url-lib`
+# Contributing
 
-Thank you for your interest in contributing to `url-lib`!
+Thank you for your interest in contributing to the library!
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ To work on changes, create a new branch on your local repository. `git checkout 
 
 ## Keeping your local repository up to date
 
-To ensure your branch never gets out of sync with benmvp's `master`, ensure that you have your upstream set properly (see the [Setup](#setup) step)
+To ensure your branch never gets out of sync with [https://github.com/benmvp/url-lib](benmvp)'s `master`, ensure that you have your upstream set properly (see the [Setup](#setup) step)
 
 1. `git checkout master` (you may have to [stash](https://git-scm.com/book/en/v1/Git-Tools-Stashing) or commit your local changes)
 1. `git pull upstream master`
@@ -57,8 +57,8 @@ Please try to conform to the coding style of the code base.
 
 ## Steps to submit:
 
-1. Please ensure that your changes are fully covered by one or more unit test(s).
+1. Please ensure that your changes are fully covered by one or more unit tests.
 1. Check to make sure that your changes are documented properly (inline comments for interesting lines, READMEs, etc.)
 1. Run `npm test` to ensure that all tests pass, the linter is satisfied and your changes are typescript compliant.
-1. PR titles must be prefixed by the type of changes the PR contains followed by the scope of what the PR touches. We are following the [angular commit guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines). Please use one of `feat, fix, docs, style, refactor, perf, test, chore` as the prefix. The " is the the direct product your changes affect. Example: `chore(build): Add encrypted ssh key for semantic-release` because its a chore and it touches the build. For multiple scope items, you can comma separate 2 or 3 but if there are more than that please use a `*` instead.
+1. PR titles must be prefixed by the type of changes the PR contains followed by the scope of what the PR touches. We are following the [angular commit guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines). Please use one of `feat, fix, docs, style, refactor, perf, test, chore` as the prefix. The "()" is the the direct product your changes affect. Example: `chore(build): Add encrypted ssh key for semantic-release` because its a `chore` and it touches the `build`. For multiple scope items, you can comma separate 2 or 3 but if there are more than that please use a `*` instead.
 1. Please use a [closing issue keyword](https://help.github.com/articles/closing-issues-using-keywords/) to indicate the issue that your fix addresses in the description section of the pull request template. Example: `fixes #32` to close issue #32
